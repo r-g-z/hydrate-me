@@ -8,6 +8,6 @@ const waterEntrySchema = new Schema({
   waterAmount: { type: Number, min: 0, max: 8, default: 0 },
 });
 
-const waterEntry = mongoose.model("waterEntry", waterEntrySchema);
+const Entry = mongoose.model("Entry", waterEntrySchema);
 
-module.exports = waterEntry;
+module.exports = Entry;
