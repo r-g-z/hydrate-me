@@ -1,6 +1,14 @@
 import { useState } from "react";
-import { useRadioGroup, HStack, VStack } from "@chakra-ui/react";
+import { useRadioGroup, HStack, VStack, Stack } from "@chakra-ui/react";
 import RadioCard from "../Form/RadioCard";
+import {
+  NumberInput,
+  NumberInputField,
+  NumberInputStepper,
+  NumberIncrementStepper,
+  NumberDecrementStepper,
+} from "@chakra-ui/react";
+import { Button, ButtonGroup } from "@chakra-ui/react";
 
 const initialState = {
   gender: "",
@@ -20,7 +28,7 @@ const ProfileForm = (props) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    props.onFormSubmit(fields);
+    // props.onFormSubmit(fields);
     setFields(initialState);
     console.log(fields);
   };
@@ -73,6 +81,15 @@ const ProfileForm = (props) => {
         })}
       </HStack>
       <h1>Weight</h1>
+
+      <NumberInput>
+        <NumberInputField />
+        <NumberInputStepper>
+          <NumberIncrementStepper />
+          <NumberDecrementStepper />
+        </NumberInputStepper>
+      </NumberInput>
+      <h1>Weekly Exercise Activity</h1>
       <VStack {...exerciseGroup}>
         {exerciseOptions.map((value) => {
           const radio = getExerciseRadioProps({ value });
@@ -83,7 +100,12 @@ const ProfileForm = (props) => {
           );
         })}
       </VStack>
-      <h1>Weekly Exercise Activity</h1>
+
+      <Stack direction="row" spacing={4} align="center">
+        <Button colorScheme="teal" variant="outline" type="submit">
+          Next
+        </Button>
+      </Stack>
     </form>
   );
 };

@@ -28,6 +28,30 @@ const App = () => {
     navigate("/");
   };
 
+  useEffect(() => {
+    const checkIfLoggedIn = async () => {
+      const res = await fetch(`/users/isauthowaterAmountrised`);
+      const data = await res.json();
+      console.log(data.msg);
+      setAuthorised(data.authorised);
+      setUser(data.user);
+    };
+    checkIfLoggedIn();
+  }, []);
+
+  // const [Onboard, setOnboard] = useState(null);
+
+  // const getOnboard = async () => {
+  //   const url = "/Onboards/Onboards";
+  //   const res = await fetch(url);
+  //   const data = await res.json();
+  //   setOnboard(data);
+  // };
+
+  // useEffect(() => {
+  //   getOnboard();
+  // }, []);
+
   return (
     <ChakraProvider>
       <div className="App">
