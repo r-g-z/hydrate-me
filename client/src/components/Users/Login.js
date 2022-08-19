@@ -53,8 +53,9 @@ const Login = (props) => {
         />
       </div>
       <input className="marginlg" type="submit" value="Login" />
-      <p className="marginlg">
-        No account yet? <Link to="/register">Register here</Link>
+      <p className="marginlg">No account yet? Sign up for free </p>
+      <p>
+        <Link to="/register">Register here</Link>
       </p>
     </form>
   );

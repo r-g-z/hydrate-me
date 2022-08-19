@@ -4,11 +4,14 @@ import Navbar from "react-bootstrap/Navbar";
 import Button from "react-bootstrap/Button";
 import Logout from "./Users/Logout";
 
-function Header() {
+function Header(props) {
   return (
-    <div>
-      <h1>Hydrate Me</h1>
-    </div>
+    <Navbar bg="light" expand="lg">
+      <Container>
+        <h1>Hydrate Me</h1>
+        <Logout handleLogout={props.handleLogout} />
+      </Container>
+    </Navbar>
   );
 }
 
