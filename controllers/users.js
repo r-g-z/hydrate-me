@@ -6,6 +6,7 @@ const User = require("../models/users");
 const userRouter = express.Router();
 
 userRouter.post("/register", async (req, res) => {
+  console.log(req.body);
   req.body.password = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync());
 
   try {
