@@ -16,6 +16,24 @@ const initialState = {
   exercise: "",
 };
 
+const calculateDailyGoal = (weight, exercise) => {
+  let daily_goal = parseInt(weight) * 33;
+  switch (exercise) {
+    case "Light":
+      daily_goal += 350;
+      break;
+    case "Medium":
+      daily_goal += 500;
+      break;
+    case "Intense":
+      daily_goal += 700;
+      break;
+    default:
+      console.log("Drink more");
+  }
+  return daily_goal;
+};
+
 const ProfileForm = (props) => {
   const [fields, setFields] = useState(initialState);
   const handleChange = (event) => {
@@ -31,12 +49,13 @@ const ProfileForm = (props) => {
     // props.onFormSubmit(fields);
     // setFields(initialState);
     console.log(fields);
+    const daily_goal = calculateDailyGoal(fields.weight, fields.exercise);
     fetch(`/users/onboard`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ ...fields }),
+      body: JSON.stringify({ ...fields, daily_goal }),
     })
       .then((res) => {
         return res.json();
@@ -97,7 +116,7 @@ const ProfileForm = (props) => {
       <h1>Weight</h1>
 
       <NumberInput>
-        <NumberInputField name="weight" onChange={handleChange} />
+        <NumberInputField name="weight" onChange={handleChange} type="number" />
       </NumberInput>
       <h1>Weekly Exercise Activity</h1>
       <VStack {...exerciseGroup}>
