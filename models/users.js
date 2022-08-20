@@ -7,6 +7,7 @@ const userSchema = Schema({
   gender: { type: String, enum: ["Female", "Male"] },
   weight: { type: Number },
   exercise: { type: String, enum: ["Light", "Medium", "Intense"] },
+  daily_goal: { type: Number },
 });
 
 const User = mongoose.model("User", userSchema);

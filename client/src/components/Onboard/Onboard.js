@@ -31,6 +31,20 @@ const ProfileForm = (props) => {
     // props.onFormSubmit(fields);
     // setFields(initialState);
     console.log(fields);
+    fetch(`/users/onboard`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ ...fields }),
+    })
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        // setReviews([...reviews, data]);
+        // navigate("/my-reviews");
+      });
   };
 
   const handleGenderChange = (value) => {

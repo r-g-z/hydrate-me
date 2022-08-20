@@ -91,4 +91,10 @@ userRouter.get("/isauthorised", async (req, res) => {
   }
 });
 
+userRouter.put("/onboard", async (req, res) => {
+  console.log(req.body);
+  console.log(req.session.currentUser);
+  return res.status(200);
+});
+
 module.exports = userRouter;
