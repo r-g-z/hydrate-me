@@ -93,7 +93,34 @@ userRouter.get("/isauthorised", async (req, res) => {
 
 userRouter.put("/onboard", async (req, res) => {
   console.log(req.body);
-  console.log(req.session.currentUser);
+
+  // weight * 0.033
+  // light + 350
+  // medium + 500
+  // intense 700
+
+  let daily_goal = parseInt(req.body.weight) * 33;
+  switch (req.body.exercise) {
+    case "Light":
+      daily_goal += 350;
+      break;
+    case "Medium":
+      daily_goal += 500;
+      break;
+    case "Intense":
+      daily_goal += 700;
+      break;
+    default:
+      console.log("Drink more");
+  }
+
+  const user = await User.findOneAndUpdate(
+    {
+      _id: req.session.currentUser._id,
+    },
+    { ...req.body, daily_goal }
+  ).exec();
+  console.log(user);
   return res.status(200);
 });
 
