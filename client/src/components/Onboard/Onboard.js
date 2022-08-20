@@ -12,7 +12,7 @@ import { Button, ButtonGroup } from "@chakra-ui/react";
 
 const initialState = {
   gender: "",
-  weight: 60,
+  weight: 0,
   exercise: "",
 };
 
@@ -29,7 +29,7 @@ const ProfileForm = (props) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     // props.onFormSubmit(fields);
-    setFields(initialState);
+    // setFields(initialState);
     console.log(fields);
   };
 
@@ -83,11 +83,7 @@ const ProfileForm = (props) => {
       <h1>Weight</h1>
 
       <NumberInput>
-        <NumberInputField />
-        <NumberInputStepper>
-          <NumberIncrementStepper />
-          <NumberDecrementStepper />
-        </NumberInputStepper>
+        <NumberInputField name="weight" onChange={handleChange} />
       </NumberInput>
       <h1>Weekly Exercise Activity</h1>
       <VStack {...exerciseGroup}>
