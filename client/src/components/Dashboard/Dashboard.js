@@ -30,6 +30,8 @@ function Dashboard(props) {
     return <div>Loading</div>;
   }
 
+  console.log(userData);
+
   return (
     <div>
       <Heading>Feeling Parched?</Heading>
