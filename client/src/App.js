@@ -30,7 +30,7 @@ const App = () => {
 
   useEffect(() => {
     const checkIfLoggedIn = async () => {
-      const res = await fetch(`/users/isauthowaterAmountrised`);
+      const res = await fetch(`/users/isauthorised`);
       const data = await res.json();
       console.log(data.msg);
       setAuthorised(data.authorised);

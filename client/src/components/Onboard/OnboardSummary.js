@@ -1,19 +1,30 @@
 import Onboard from "./Onboard";
+import { useEffect, useState } from "react";
 
 function OnboardSummary(props) {
-  fetch(`/users/profile`, {
-    method: "GET",
-  })
-    .then((res) => {
-      return res.json();
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    fetch(`/users/profile`, {
+      method: "GET",
     })
-    .then((data) => {
-      props.onSuccessSubmit();
-    });
+      .then((res) => {
+        return res.json();
+      })
+      .then((userData) => {
+        setUser(userData);
+      });
+  }, []);
+
+  if (!user) {
+    return <div>Loading</div>;
+  }
 
   return (
     <div>
-      <h1>hi goal</h1>
+      <h1>Hi {user.username} </h1>
+      <h1>Daily Goal</h1>
+      <h1>{user.daily_goal}ml</h1>
     </div>
   );
 }
