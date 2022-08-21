@@ -9,6 +9,7 @@ import Home from "./components/Home";
 import Login from "./components/Users/Login";
 import Logout from "./components/Users/Logout";
 import Register from "./components/Users/Register";
+import Dashboard from "./components/Dashboard/Dashboard";
 import Footer from "./components/Footer";
 import Onboard from "./components/Onboard/Onboard";
 
@@ -64,6 +65,7 @@ const App = () => {
             element={<Register handleRegister={handleAuth} />}
           />
           <Route path="/login" element={<Login handleLogin={handleAuth} />} />
+          <Route path="dashboard" element={<Dashboard />} />
           <Route
             path="logout"
             element={<Logout handleLogout={handleLogout} />}
