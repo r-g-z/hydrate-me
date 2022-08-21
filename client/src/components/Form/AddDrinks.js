@@ -14,6 +14,22 @@ import {
 const AddDrinks = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
+  const addCups = (number) => {
+    fetch(`/`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ date: new Date(), waterAmount: 250 }),
+    })
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        // props.onSuccessSubmit();
+      });
+  };
+
   return (
     <>
       <Button onClick={onOpen}>Open</Button>
@@ -24,22 +40,14 @@ const AddDrinks = () => {
           <DrawerHeader>Create your account</DrawerHeader>
 
           <DrawerBody>
-            <form
-              id="my-form"
-              onSubmit={(e) => {
-                e.preventDefault();
-                console.log("submitted");
-              }}
-            >
-              <Input name="nickname" placeholder="Type here..." />
-            </form>
+            <Button onClick={addCups}>Cup</Button>
           </DrawerBody>
 
-          <DrawerFooter>
+          {/* <DrawerFooter>
             <Button type="submit" form="my-form">
               Save
             </Button>
-          </DrawerFooter>
+          </DrawerFooter> */}
         </DrawerContent>
       </Drawer>
     </>

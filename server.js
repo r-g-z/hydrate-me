@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const session = require("express-session");
 const mongoDBSession = require("connect-mongodb-session");
 const usersRouter = require("./controllers/users");
+const entriesRouter = require("./controllers/entries");
 
 const app = express();
 const PORT = process.env.PORT;
@@ -29,6 +30,7 @@ app.use(
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use("/users", usersRouter);
+app.use("/", entriesRouter);
 
 mongoose.connect(dbURL, () => {
   console.log("Connected to hydrate db");

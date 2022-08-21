@@ -1,5 +1,12 @@
 import { useEffect, useState } from "react";
-import { Heading, Flex, Text, useDisclosure } from "@chakra-ui/react";
+import {
+  Heading,
+  Flex,
+  Text,
+  useDisclosure,
+  CircularProgress,
+  CircularProgressLabel,
+} from "@chakra-ui/react";
 
 import AddDrinks from "../Form/AddDrinks";
 
@@ -26,13 +33,12 @@ function Dashboard(props) {
   return (
     <div>
       <Heading>Feeling Parched?</Heading>
+      <CircularProgress value={40} size="100px" color="blue.200">
+        <CircularProgressLabel>40%</CircularProgressLabel>
+      </CircularProgress>
       <Flex direction="column">
         <Heading>Daily Goal</Heading>
         <Text>{user.daily_goal}ml</Text>
-      </Flex>
-      <Flex direction="column">
-        <Heading>0/8</Heading>
-        <Text>250ml cups</Text>
       </Flex>
       <AddDrinks />
     </div>
