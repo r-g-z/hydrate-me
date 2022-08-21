@@ -9,6 +9,7 @@ import {
   NumberDecrementStepper,
 } from "@chakra-ui/react";
 import { Button, ButtonGroup } from "@chakra-ui/react";
+import OnboardSummary from "./OnboardSummary";
 
 const initialState = {
   gender: "",
@@ -61,8 +62,7 @@ const ProfileForm = (props) => {
         return res.json();
       })
       .then((data) => {
-        // setReviews([...reviews, data]);
-        // navigate("/my-reviews");
+        props.onSuccessSubmit();
       });
   };
 
@@ -140,10 +140,23 @@ const ProfileForm = (props) => {
 };
 
 function Onboard() {
+  const [step, setStep] = useState(1);
+
+  const incrementStep = () => {
+    setStep(step + 1);
+  };
+
   return (
     <>
-      <p>A few simple steps to generate a suitable drinking plan for you.</p>
-      <ProfileForm />
+      {step === 1 && (
+        <>
+          <p>
+            A few simple steps to generate a suitable drinking plan for you.
+          </p>
+          <ProfileForm onSuccessSubmit={incrementStep} />{" "}
+        </>
+      )}
+      {step === 2 && <OnboardSummary />}
     </>
   );
 }

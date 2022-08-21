@@ -106,7 +106,12 @@ userRouter.put("/onboard", async (req, res) => {
     req.body
   ).exec();
   console.log(user);
-  return res.status(200);
+  res.status(200).json(user);
+});
+
+userRouter.get("/profile", async (req, res) => {
+  const user = await User.findOne({ _id: req.session.currentUser._id }).exec();
+  res.status(200).json(user);
 });
 
 module.exports = userRouter;
