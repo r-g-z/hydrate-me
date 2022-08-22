@@ -34,7 +34,7 @@ function OnboardSummary(props) {
     <div>
       <Text>Hi {user.username} </Text>
       <Heading as="h1">Daily Goal</Heading>
-      <Heading as="h2">{user.daily_goal}ml</Heading>
+      <Text fontSize="2xl">{user.daily_goal}ml</Text>
 
       <Stack direction="row" spacing={4} align="center">
         <Button

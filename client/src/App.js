@@ -57,7 +57,15 @@ const App = () => {
             element={<Register handleRegister={handleAuth} />}
           />
           <Route path="/login" element={<Login handleLogin={handleAuth} />} />
-          <Route path="dashboard" element={<Dashboard />} />
+          <Route
+            path="dashboard"
+            element={
+              <>
+                <Dashboard />
+                <Footer />
+              </>
+            }
+          />
           <Route
             path="logout"
             element={<Logout handleLogout={handleLogout} />}

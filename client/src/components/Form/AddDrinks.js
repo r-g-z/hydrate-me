@@ -11,6 +11,8 @@ import {
   DrawerCloseButton,
 } from "@chakra-ui/react";
 
+import { AddIcon } from "@chakra-ui/icons";
+
 const AddDrinks = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
@@ -32,15 +34,17 @@ const AddDrinks = () => {
 
   return (
     <>
-      <Button onClick={onOpen}>Open</Button>
+      <Button onClick={onOpen} leftIcon={<AddIcon />}>
+        Water
+      </Button>
       <Drawer placement={"bottom"} isOpen={isOpen} onClose={onClose}>
         <DrawerOverlay />
         <DrawerContent>
           <DrawerCloseButton />
-          <DrawerHeader>Create your account</DrawerHeader>
+          <DrawerHeader>Add your water</DrawerHeader>
 
           <DrawerBody>
-            <Button onClick={addCups}>Cup</Button>
+            <Button onClick={addCups}>Cup 250ml</Button>
           </DrawerBody>
 
           {/* <DrawerFooter>

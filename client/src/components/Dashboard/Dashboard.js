@@ -6,6 +6,8 @@ import {
   useDisclosure,
   CircularProgress,
   CircularProgressLabel,
+  List,
+  ListItem,
 } from "@chakra-ui/react";
 
 import AddDrinks from "../Form/AddDrinks";
@@ -60,6 +62,9 @@ function Dashboard(props) {
   }
 
   console.log(waterPercentage);
+  //   my questions is, should i move that bit out
+  // because i plan on showing this again
+  // when you click on the circle e.g. Monday
 
   return (
     <div>
@@ -71,6 +76,17 @@ function Dashboard(props) {
         <Heading>Daily Goal</Heading>
         <Text>{user.daily_goal}ml</Text>
       </Flex>
+      <Text fontSize="2xl">Today</Text>
+      {/* show Water Entry, time and water amount */}
+      <List>
+        {waterEntries.map((waterEntry) => {
+          return (
+            <ListItem>
+              {waterEntry.date} {waterEntry.waterAmount}ml
+            </ListItem>
+          );
+        })}
+      </List>
       <AddDrinks />
     </div>
   );
