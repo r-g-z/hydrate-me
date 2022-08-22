@@ -4,8 +4,10 @@ const waterRouter = express.Router();
 const WaterEntry = require("../models/entry.js");
 
 waterRouter.get("/", async (req, res) => {
-  const waterEntries = await WaterEntry.find({}).exec();
-
+  const waterEntries = await WaterEntry.find({
+    //   date: { $gte: ISOD ISODate(`2020-03-01`), $lt: ISODate(`2021-04-01`) },
+  }).exec();
+  console.log("query", req.query);
   res.status(200).json(waterEntries);
 });
 

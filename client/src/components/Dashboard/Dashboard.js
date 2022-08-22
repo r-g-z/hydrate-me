@@ -9,7 +9,7 @@ import {
   List,
   ListItem,
 } from "@chakra-ui/react";
-
+import { compareAsc, endOfDay, format, parseISO, startOfDay } from "date-fns";
 import AddDrinks from "../Form/AddDrinks";
 
 function Dashboard(props) {
@@ -30,9 +30,14 @@ function Dashboard(props) {
   }, []);
 
   useEffect(() => {
-    fetch(`/entries`, {
-      method: "GET",
-    })
+    fetch(
+      `/entries?startDate=${startOfDay(new Date())}&endDate=${endOfDay(
+        new Date()
+      )}`,
+      {
+        method: "GET",
+      }
+    )
       .then((res) => {
         return res.json();
       })
@@ -65,6 +70,8 @@ function Dashboard(props) {
   //   my questions is, should i move that bit out
   // because i plan on showing this again
   // when you click on the circle e.g. Monday
+  //   then my next steps would be the bottom buttons
+  // so it will be a footer then i will have those three buttons as a nav?
 
   return (
     <div>
@@ -82,7 +89,8 @@ function Dashboard(props) {
         {waterEntries.map((waterEntry) => {
           return (
             <ListItem>
-              {waterEntry.date} {waterEntry.waterAmount}ml
+              {waterEntry.date && format(parseISO(waterEntry.date), "h:mm a")}{" "}
+              {waterEntry.waterAmount}ml
             </ListItem>
           );
         })}

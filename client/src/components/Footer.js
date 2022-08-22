@@ -1,17 +1,12 @@
-import { Text, Link } from "@chakra-ui/react";
+import { Text } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 
+//  i wanted it so you can change it yourself and updates
 function Footer() {
   return (
     <div>
-      <Text>About Us</Text>
-      <div>
-        <Link href="https://www.linkedin.com/in/s-cho/" isExternal>
-          Linkedin
-        </Link>
-        <Link href="https://github.com/Suzyyc" isExternal>
-          GitHub
-        </Link>
-      </div>
+      <Link to="/logs">Water Logs</Link>
+      <Link to="/user">Profile</Link>
     </div>
   );
 }
