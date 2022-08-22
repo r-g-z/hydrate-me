@@ -5,7 +5,7 @@ const WaterEntry = require("../models/entry.js");
 
 waterRouter.get("/", async (req, res) => {
   const waterEntries = await WaterEntry.find({}).exec();
-  console.log(waters);
+
   res.status(200).json(waterEntries);
 });
 

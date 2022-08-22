@@ -15,7 +15,7 @@ const AddDrinks = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   const addCups = (number) => {
-    fetch(`/`, {
+    fetch(`/entries`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

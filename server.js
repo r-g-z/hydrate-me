@@ -30,7 +30,7 @@ app.use(
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use("/users", usersRouter);
-app.use("/", entriesRouter);
+app.use("/entries", entriesRouter);
 
 mongoose.connect(dbURL, () => {
   console.log("Connected to hydrate db");
