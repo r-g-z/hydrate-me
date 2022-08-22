@@ -15,8 +15,9 @@ import Login from "./components/Users/Login";
 import Logout from "./components/Users/Logout";
 import Register from "./components/Users/Register";
 import Dashboard from "./components/Dashboard/Dashboard";
-import Footer from "./components/Footer";
 import Onboard from "./components/Onboard/Onboard";
+import Profile from "./components/Profile";
+import Footer from "./components/Footer";
 
 const App = () => {
   const [authorised, setAuthorised] = useState(null);
@@ -70,6 +71,7 @@ const App = () => {
             path="logout"
             element={<Logout handleLogout={handleLogout} />}
           />
+          <Route path="/profile" element={<Profile />} />
         </Routes>
         <Footer />
       </div>
