@@ -1,5 +1,12 @@
 import { useState } from "react";
-import { useRadioGroup, HStack, VStack, Stack, Button } from "@chakra-ui/react";
+import {
+  useRadioGroup,
+  HStack,
+  VStack,
+  Stack,
+  Button,
+  Text,
+} from "@chakra-ui/react";
 import RadioCard from "../Form/RadioCard";
 import {
   NumberInput,
@@ -99,7 +106,7 @@ const ProfileForm = (props) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <h1>Gender</h1>
+      <Text>Gender</Text>
       {/* <input name="gender" /> */}
       {/* <label className="form-label" htmlFor="gender"></label> */}
       <HStack {...group}>
@@ -112,12 +119,12 @@ const ProfileForm = (props) => {
           );
         })}
       </HStack>
-      <h1>Weight</h1>
+      <Text>Weight</Text>
 
       <NumberInput>
         <NumberInputField name="weight" onChange={handleChange} type="number" />
       </NumberInput>
-      <h1>Weekly Exercise Activity</h1>
+      <Text>Weekly Exercise Activity</Text>
       <VStack {...exerciseGroup}>
         {exerciseOptions.map((value) => {
           const radio = getExerciseRadioProps({ value });

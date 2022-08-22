@@ -1,7 +1,7 @@
 import Onboard from "./Onboard";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Stack, Button } from "@chakra-ui/react";
+import { Stack, Button, Heading, Text } from "@chakra-ui/react";
 
 function OnboardSummary(props) {
   const [user, setUser] = useState(null);
@@ -32,9 +32,9 @@ function OnboardSummary(props) {
 
   return (
     <div>
-      <h1>Hi {user.username} </h1>
-      <h1>Daily Goal</h1>
-      <h1>{user.daily_goal}ml</h1>
+      <Text>Hi {user.username} </Text>
+      <Heading as="h1">Daily Goal</Heading>
+      <Heading as="h2">{user.daily_goal}ml</Heading>
 
       <Stack direction="row" spacing={4} align="center">
         <Button

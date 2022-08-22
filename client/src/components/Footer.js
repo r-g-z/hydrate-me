@@ -1,14 +1,16 @@
+import { Text, Link } from "@chakra-ui/react";
+
 function Footer() {
   return (
     <div>
-      <h1>About Us</h1>
+      <Text>About Us</Text>
       <div>
-        <a href="https://www.linkedin.com/in/s-cho/">
-          <i class="bi bi-linkedin">linkedin</i>
-        </a>
-        <a href="https://github.com/Suzyyc/skincare-journal">
-          <i class="bi bi-github">Github</i>
-        </a>
+        <Link href="https://www.linkedin.com/in/s-cho/" isExternal>
+          Linkedin
+        </Link>
+        <Link href="https://github.com/Suzyyc" isExternal>
+          GitHub
+        </Link>
       </div>
     </div>
   );

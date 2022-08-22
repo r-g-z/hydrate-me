@@ -1,6 +1,11 @@
 import { useState, useEffect } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
-import { ChakraProvider } from "@chakra-ui/react";
+import {
+  ChakraProvider,
+  PhoneIcon,
+  AddIcon,
+  WarningIcon,
+} from "@chakra-ui/react";
 
 import "./App.css";
 
@@ -39,19 +44,6 @@ const App = () => {
     };
     checkIfLoggedIn();
   }, []);
-
-  // const [Onboard, setOnboard] = useState(null);
-
-  // const getOnboard = async () => {
-  //   const url = "/Onboards/Onboards";
-  //   const res = await fetch(url);
-  //   const data = await res.json();
-  //   setOnboard(data);
-  // };
-
-  // useEffect(() => {
-  //   getOnboard();
-  // }, []);
 
   return (
     <ChakraProvider>

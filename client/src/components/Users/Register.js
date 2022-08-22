@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Login.css";
+import { Heading, Text } from "@chakra-ui/react";
 
 const Register = (props) => {
   const [fields, setFields] = useState({ username: "", password: "" });
@@ -27,7 +28,7 @@ const Register = (props) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <h1>Register</h1>
+      <Heading as="h3">Register</Heading>
       <div>
         <label className="user" htmlFor="username">
           Username
@@ -53,9 +54,9 @@ const Register = (props) => {
         />
       </div>
       <input className="marginlg" type="submit" value="Register" />
-      <p className="marginlg">
+      <Text className="marginlg">
         Already have an account? <Link to="/login">Login here</Link>
-      </p>
+      </Text>
     </form>
   );
 };

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Login.css";
+import { Heading, Text } from "@chakra-ui/react";
 
 const Login = (props) => {
   const [fields, setFields] = useState({ username: "", password: "" });
@@ -27,7 +28,7 @@ const Login = (props) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <h1>Log In</h1>
+      <Heading as="h3">Log In</Heading>
       <div>
         <label className="user" htmlFor="username">
           Username
