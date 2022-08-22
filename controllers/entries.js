@@ -5,7 +5,7 @@ const WaterEntry = require("../models/entry.js");
 
 waterRouter.get("/", async (req, res) => {
   const waterEntries = await WaterEntry.find({
-    //   date: { $gte: ISOD ISODate(`2020-03-01`), $lt: ISODate(`2021-04-01`) },
+    date: { $gte: req.query.startDate, $lt: req.query.endDate },
   }).exec();
   console.log("query", req.query);
   res.status(200).json(waterEntries);
@@ -21,6 +21,6 @@ waterRouter.post("/", async (req, res) => {
   res.status(200).json(waterEntry);
 });
 
-WaterEntry.create({});
+// WaterEntry.create({});
 
 module.exports = waterRouter;

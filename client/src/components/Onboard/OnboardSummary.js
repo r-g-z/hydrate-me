@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Stack, Button, Heading, Text } from "@chakra-ui/react";
 
-function OnboardSummary(props) {
+const OnboardSummary = (props) => {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
@@ -48,6 +48,6 @@ function OnboardSummary(props) {
       </Stack>
     </div>
   );
-}
+};
 
 export default OnboardSummary;

@@ -5,7 +5,7 @@ import Button from "react-bootstrap/Button";
 import Logout from "./Users/Logout";
 import { Link } from "react-router-dom";
 
-function Header(props) {
+const Header = (props) => {
   return (
     <Navbar bg="light" expand="lg">
       <Container>
@@ -14,6 +14,6 @@ function Header(props) {
       </Container>
     </Navbar>
   );
-}
+};
 
 export default Header;

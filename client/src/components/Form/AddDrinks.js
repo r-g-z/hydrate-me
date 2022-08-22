@@ -13,23 +13,12 @@ import {
 
 import { AddIcon } from "@chakra-ui/icons";
 
-const AddDrinks = () => {
+const AddDrinks = (props) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
-  const addCups = (number) => {
-    fetch(`/entries`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ date: new Date(), waterAmount: 250 }),
-    })
-      .then((res) => {
-        return res.json();
-      })
-      .then((data) => {
-        // props.onSuccessSubmit();
-      });
+  const handleClick = () => {
+    props.addCups();
+    onClose();
   };
 
   return (
@@ -44,14 +33,8 @@ const AddDrinks = () => {
           <DrawerHeader>Add your water</DrawerHeader>
 
           <DrawerBody>
-            <Button onClick={addCups}>Cup 250ml</Button>
+            <Button onClick={handleClick}>Cup 250ml</Button>
           </DrawerBody>
-
-          {/* <DrawerFooter>
-            <Button type="submit" form="my-form">
-              Save
-            </Button>
-          </DrawerFooter> */}
         </DrawerContent>
       </Drawer>
     </>

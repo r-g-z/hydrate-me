@@ -145,7 +145,7 @@ const ProfileForm = (props) => {
   );
 };
 
-function Onboard() {
+const Onboard = () => {
   const [step, setStep] = useState(1);
 
   const incrementStep = () => {
@@ -165,6 +165,6 @@ function Onboard() {
       {step === 2 && <OnboardSummary />}
     </>
   );
-}
+};
 
 export default Onboard;

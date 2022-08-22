@@ -12,7 +12,7 @@ import {
 import { compareAsc, endOfDay, format, parseISO, startOfDay } from "date-fns";
 import AddDrinks from "../Form/AddDrinks";
 
-function Dashboard(props) {
+const Dashboard = (props) => {
   const [user, setUser] = useState(null);
   const [waterEntries, setWaterEntries] = useState([]);
   const [waterPercentage, setWaterPercentage] = useState(0);
@@ -57,21 +57,26 @@ function Dashboard(props) {
       setWaterPercentage(waterP);
     }
   }, [user, waterEntries]);
-  // now that the water entry is set,
-  // shall i do the calcuation % or  make the entries show up
-  // uhm water data 250ml, every water data entry  / by daily goal to get percentage
-  //    it wasn't defined>
+
+  const addCups = (number) => {
+    fetch(`/entries`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ date: new Date(), waterAmount: 250 }),
+    })
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        setWaterEntries([...waterEntries, data]);
+      });
+  };
 
   if (!user) {
     return <div>Loading</div>;
   }
-
-  console.log(waterPercentage);
-  //   my questions is, should i move that bit out
-  // because i plan on showing this again
-  // when you click on the circle e.g. Monday
-  //   then my next steps would be the bottom buttons
-  // so it will be a footer then i will have those three buttons as a nav?
 
   return (
     <div>
@@ -95,9 +100,9 @@ function Dashboard(props) {
           );
         })}
       </List>
-      <AddDrinks />
+      <AddDrinks addCups={addCups} />
     </div>
   );
-}
+};
 
 export default Dashboard;

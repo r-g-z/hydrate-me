@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Text } from "@chakra-ui/react";
 
-function Home() {
+const Home = () => {
   return (
     <>
       <Link to="/login">Login</Link>
@@ -16,6 +16,6 @@ function Home() {
       </Text>
     </>
   );
-}
+};
 
 export default Home;
