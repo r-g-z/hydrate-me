@@ -11,7 +11,7 @@ import {
   Icon,
 } from "@chakra-ui/react";
 import { DeleteIcon } from "@chakra-ui/icons";
-import { compareAsc, endOfDay, format, parseISO, startOfDay } from "date-fns";
+import { endOfDay, format, parseISO, startOfDay } from "date-fns";
 import AddDrinks from "../Form/AddDrinks";
 
 const Dashboard = (props) => {
@@ -89,7 +89,7 @@ const Dashboard = (props) => {
       })
       .then(() => {
         const remainingWaterEntries = waterEntries.filter((waterEntry) => {
-          return waterEntry._id != id;
+          return waterEntry._id !== id;
         });
         setWaterEntries(remainingWaterEntries);
       });
@@ -110,7 +110,6 @@ const Dashboard = (props) => {
         <Text>{user.daily_goal}ml</Text>
       </Flex>
       <Text fontSize="2xl">Today</Text>
-      {/* show Water Entry, time and water amount */}
       <List>
         {waterEntries.map((waterEntry) => {
           return (
