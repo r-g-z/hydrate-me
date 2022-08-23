@@ -13,6 +13,7 @@ import Dashboard from "./components/Dashboard/Dashboard";
 import Onboard from "./components/Onboard/Onboard";
 import Logs from "./components/Logs";
 import Profile from "./components/Profile";
+import EditProfile from "./components/EditProfile";
 import Footer from "./components/Footer";
 
 const App = () => {
@@ -80,6 +81,14 @@ const App = () => {
             element={
               <>
                 <Profile /> <Footer />
+              </>
+            }
+          />
+          <Route
+            path="/profile/edit"
+            element={
+              <>
+                <EditProfile /> <Footer />
               </>
             }
           />

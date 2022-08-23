@@ -3,9 +3,11 @@ import { useEffect, useState } from "react";
 import { ImDroplet } from "react-icons/im";
 import { BsPersonFill } from "react-icons/bs";
 import { GiWeight, GiWeightLiftingUp } from "react-icons/gi";
+import { useNavigate } from "react-router-dom";
 
-const Footer = () => {
+const Profile = () => {
   const [user, setUser] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetch(`/users/profile`, {
@@ -33,7 +35,12 @@ const Footer = () => {
         alt="profile-pic"
       />
       <Text>{user.username}</Text>
-      <div>
+      <Box
+        sx={{ border: "1px" }}
+        onClick={() => {
+          navigate("/profile/edit");
+        }}
+      >
         <HStack>
           <Box sx={{ display: "flex", alignItems: "center" }}>
             <BsPersonFill />
@@ -53,7 +60,7 @@ const Footer = () => {
           <Text>{user.weight}</Text>
           <Text>{user.exercise}</Text>
         </HStack>
-      </div>
+      </Box>
       <Box sx={{ display: "flex", alignItems: "center" }}>
         <Box sx={{ color: "#53A7D8" }}>
           <ImDroplet />
@@ -69,4 +76,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default Profile;
