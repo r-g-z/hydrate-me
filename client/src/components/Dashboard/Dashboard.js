@@ -8,7 +8,9 @@ import {
   CircularProgressLabel,
   List,
   ListItem,
+  Icon,
 } from "@chakra-ui/react";
+import { DeleteIcon } from "@chakra-ui/icons";
 import { compareAsc, endOfDay, format, parseISO, startOfDay } from "date-fns";
 import AddDrinks from "../Form/AddDrinks";
 
@@ -74,6 +76,25 @@ const Dashboard = (props) => {
       });
   };
 
+  const handleDelete = (id) => {
+    fetch(`/entries`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ id }),
+    })
+      .then((res) => {
+        return res.json();
+      })
+      .then(() => {
+        const remainingWaterEntries = waterEntries.filter((waterEntry) => {
+          return waterEntry._id != id;
+        });
+        setWaterEntries(remainingWaterEntries);
+      });
+  };
+
   if (!user) {
     return <div>Loading</div>;
   }
@@ -96,6 +117,9 @@ const Dashboard = (props) => {
             <ListItem>
               {waterEntry.date && format(parseISO(waterEntry.date), "h:mm a")}{" "}
               {waterEntry.waterAmount}ml
+              <div onClick={() => handleDelete(waterEntry._id)}>
+                <DeleteIcon />
+              </div>
             </ListItem>
           );
         })}

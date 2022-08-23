@@ -1,11 +1,6 @@
 import { useState, useEffect } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
-import {
-  ChakraProvider,
-  PhoneIcon,
-  AddIcon,
-  WarningIcon,
-} from "@chakra-ui/react";
+import { ChakraProvider } from "@chakra-ui/react";
 
 import "./App.css";
 
@@ -16,6 +11,7 @@ import Logout from "./components/Users/Logout";
 import Register from "./components/Users/Register";
 import Dashboard from "./components/Dashboard/Dashboard";
 import Onboard from "./components/Onboard/Onboard";
+import Logs from "./components/Logs";
 import Profile from "./components/Profile";
 import Footer from "./components/Footer";
 
@@ -59,7 +55,11 @@ const App = () => {
           />
           <Route path="/login" element={<Login handleLogin={handleAuth} />} />
           <Route
-            path="dashboard"
+            path="logout"
+            element={<Logout handleLogout={handleLogout} />}
+          />
+          <Route
+            path="/dashboard"
             element={
               <>
                 <Dashboard />
@@ -68,12 +68,22 @@ const App = () => {
             }
           />
           <Route
-            path="logout"
-            element={<Logout handleLogout={handleLogout} />}
+            path="/logs"
+            element={
+              <>
+                <Logs /> <Footer />
+              </>
+            }
           />
-          <Route path="/profile" element={<Profile />} />
+          <Route
+            path="/profile"
+            element={
+              <>
+                <Profile /> <Footer />
+              </>
+            }
+          />
         </Routes>
-        <Footer />
       </div>
     </ChakraProvider>
   );

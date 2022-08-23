@@ -23,4 +23,11 @@ waterRouter.post("/", async (req, res) => {
 
 // WaterEntry.create({});
 
+waterRouter.delete("/", async (req, res) => {
+  const deleteWaterEntry = await WaterEntry.findByIdAndDelete(
+    req.body.id
+  ).exec();
+  res.status(200).json(deleteWaterEntry);
+});
+
 module.exports = waterRouter;
