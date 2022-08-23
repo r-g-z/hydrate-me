@@ -29,7 +29,7 @@ const calculateDailyGoal = (weight, exercise) => {
   return daily_goal;
 };
 
-const ProfileForm = ({ onSuccessSubmit, initialState }) => {
+const ProfileForm = ({ onSuccessSubmit, initialState, button }) => {
   const [fields, setFields] = useState(initialState);
 
   const handleChange = (event) => {
@@ -127,7 +127,7 @@ const ProfileForm = ({ onSuccessSubmit, initialState }) => {
 
       <Stack direction="row" spacing={4} align="center">
         <Button colorScheme="teal" variant="outline" type="submit">
-          Next
+          {button}
         </Button>
       </Stack>
     </form>

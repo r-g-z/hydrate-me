@@ -41,6 +41,7 @@ const Onboard = () => {
           <ProfileForm
             onSuccessSubmit={incrementStep}
             initialState={initialState}
+            button={"Next"}
           />{" "}
         </>
       )}

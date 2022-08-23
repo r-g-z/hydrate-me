@@ -4,7 +4,7 @@ import Logout from "./Users/Logout";
 import { Link } from "react-router-dom";
 import { Image } from "@chakra-ui/react";
 
-const Header = (props) => {
+const Header = ({ authorised, handleLogout }) => {
   return (
     <Navbar bg="light" expand="lg">
       <Container>
@@ -15,7 +15,7 @@ const Header = (props) => {
           alt="bottle"
         />
         <Link to="/">Hydrate Me</Link>
-        <Logout handleLogout={props.handleLogout} />
+        {authorised && <Logout handleLogout={handleLogout} />}
       </Container>
     </Navbar>
   );

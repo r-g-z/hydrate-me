@@ -29,6 +29,7 @@ const EditProfile = () => {
           onSuccessSubmit={() => {
             navigate("/profile");
           }}
+          button={"Update"}
         />
       )}
     </div>
