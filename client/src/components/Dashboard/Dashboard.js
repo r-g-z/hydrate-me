@@ -15,6 +15,7 @@ import {
 import { DeleteIcon } from "@chakra-ui/icons";
 import { endOfDay, format, parseISO, startOfDay } from "date-fns";
 import AddDrinks from "../Form/AddDrinks";
+import { Link } from "react-router-dom";
 
 const Dashboard = (props) => {
   const [user, setUser] = useState(null);
@@ -98,7 +99,11 @@ const Dashboard = (props) => {
   };
 
   if (!user) {
-    return <div>Loading</div>;
+    return (
+      <div>
+        <Link to="/login">Login</Link> or <Link to="/register">Register</Link>
+      </div>
+    );
   }
 
   return (
