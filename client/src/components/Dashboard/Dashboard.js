@@ -9,6 +9,8 @@ import {
   List,
   ListItem,
   Icon,
+  Box,
+  Button,
 } from "@chakra-ui/react";
 import { DeleteIcon } from "@chakra-ui/icons";
 import { endOfDay, format, parseISO, startOfDay } from "date-fns";
@@ -113,13 +115,15 @@ const Dashboard = (props) => {
       <List>
         {waterEntries.map((waterEntry) => {
           return (
-            <ListItem>
-              {waterEntry.date && format(parseISO(waterEntry.date), "h:mm a")}{" "}
-              {waterEntry.waterAmount}ml
-              <div onClick={() => handleDelete(waterEntry._id)}>
-                <DeleteIcon />
-              </div>
-            </ListItem>
+            <Box sx={{ display: "flex", alignItems: "center" }}>
+              <ListItem>
+                {waterEntry.date && format(parseISO(waterEntry.date), "h:mm a")}{" "}
+                {waterEntry.waterAmount}ml{" "}
+                <Button size="sm">
+                  <DeleteIcon onClick={() => handleDelete(waterEntry._id)} />
+                </Button>
+              </ListItem>
+            </Box>
           );
         })}
       </List>

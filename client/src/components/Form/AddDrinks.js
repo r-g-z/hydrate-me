@@ -12,6 +12,8 @@ import {
 } from "@chakra-ui/react";
 
 import { AddIcon } from "@chakra-ui/icons";
+import { GiWaterGallon } from "react-icons/gi";
+import { BsCupFill } from "react-icons/bs";
 
 const AddDrinks = (props) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -23,8 +25,8 @@ const AddDrinks = (props) => {
 
   return (
     <>
-      <Button onClick={onOpen} leftIcon={<AddIcon />}>
-        Water
+      <Button onClick={onOpen}>
+        <BsCupFill />
       </Button>
       <Drawer placement={"bottom"} isOpen={isOpen} onClose={onClose}>
         <DrawerOverlay />
