@@ -1,7 +1,8 @@
-import { Image, Flex, Text, HStack } from "@chakra-ui/react";
+import { Image, Flex, Text, HStack, Box } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
-import { Icon } from "@chakra-ui/react";
-import { IconName } from "react-icons/fa";
+import { ImDroplet } from "react-icons/im";
+import { BsPersonFill } from "react-icons/bs";
+import { GiWeight, GiWeightLiftingUp } from "react-icons/gi";
 
 const Footer = () => {
   const [user, setUser] = useState(null);
@@ -34,9 +35,18 @@ const Footer = () => {
       <Text>{user.username}</Text>
       <div>
         <HStack>
-          <Text>Gender</Text>
-          <Text>Weight</Text>
-          <Text>Activity</Text>
+          <Box sx={{ display: "flex", alignItems: "center" }}>
+            <BsPersonFill />
+            <Text>Gender</Text>
+          </Box>
+          <Box sx={{ display: "flex", alignItems: "center" }}>
+            <GiWeight />
+            <Text>Weight</Text>
+          </Box>
+          <Box sx={{ display: "flex", alignItems: "center" }}>
+            <GiWeightLiftingUp />
+            <Text>Activity</Text>
+          </Box>
         </HStack>
         <HStack>
           <Text>{user.gender}</Text>
@@ -44,10 +54,13 @@ const Footer = () => {
           <Text>{user.exercise}</Text>
         </HStack>
       </div>
+      <Box sx={{ display: "flex", alignItems: "center" }}>
+        <Box sx={{ color: "#53A7D8" }}>
+          <ImDroplet />
+        </Box>
+        <Text>Daily Goal {user.daily_goal}ml</Text>
+      </Box>
 
-      <Text>
-        <i class="fa-solid fa-droplet"></i>Daily Goal {user.daily_goal}ml
-      </Text>
       {/* <Flex direction="column">
         <Heading>Daily Goal</Heading>
         <Text>{user.daily_goal}ml</Text>
