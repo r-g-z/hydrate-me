@@ -4,8 +4,9 @@ import { ImDroplet } from "react-icons/im";
 import { BsPersonFill } from "react-icons/bs";
 import { GiWeight, GiWeightLiftingUp } from "react-icons/gi";
 import { useNavigate } from "react-router-dom";
+import Logout from "./Users/Logout";
 
-const Profile = () => {
+const Profile = ({ authorised, handleLogout }) => {
   const [user, setUser] = useState(null);
   const navigate = useNavigate();
 
@@ -27,7 +28,7 @@ const Profile = () => {
   }
 
   return (
-    <div>
+    <Box>
       <Image
         borderRadius="full"
         boxSize="100px"
@@ -68,11 +69,8 @@ const Profile = () => {
         <Text>Daily Goal {user.daily_goal}ml</Text>
       </Box>
 
-      {/* <Flex direction="column">
-        <Heading>Daily Goal</Heading>
-        <Text>{user.daily_goal}ml</Text>
-      </Flex> */}
-    </div>
+      <Logout handleLogout={handleLogout} />
+    </Box>
   );
 };
 

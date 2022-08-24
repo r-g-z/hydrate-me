@@ -9,7 +9,7 @@ const Footer = () => {
         justifyContent: "space-between",
         position: "fixed",
         bottom: "0",
-        bgColor: "#e4f3ff",
+        bgColor: "blue.300",
         width: "100%",
       }}
     >

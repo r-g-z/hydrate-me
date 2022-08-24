@@ -1,8 +1,8 @@
-import Logout from "./Users/Logout";
 import { Link } from "react-router-dom";
-import { Image, Box } from "@chakra-ui/react";
+import { Image, Box, Button, useColorMode, Switch } from "@chakra-ui/react";
 
-const Header = ({ authorised, handleLogout }) => {
+const Header = () => {
+  const { colorMode, toggleColorMode } = useColorMode();
   return (
     <Box
       sx={{
@@ -24,9 +24,11 @@ const Header = ({ authorised, handleLogout }) => {
           <Link to="/dashboard">Hydrate Me</Link>
         </Box>
       </Box>
-      {/* <Box sx={{ display: "flex", flexDirection: "flex-end" }}> */}
-      {authorised && <Logout handleLogout={handleLogout} />}
-      {/* </Box> */}
+      <Box sx={{ display: "flex", gap: "3px", alignItems: "center" }}>
+        ☀️
+        <Switch onChange={toggleColorMode} />
+        🌑
+      </Box>
     </Box>
   );
 };

@@ -10,6 +10,7 @@ import {
   List,
   ListItem,
   Icon,
+  Box,
 } from "@chakra-ui/react";
 import { DeleteIcon } from "@chakra-ui/icons";
 
@@ -83,7 +84,7 @@ const Logs = () => {
   }
 
   return (
-    <div>
+    <Box sx={{ width: "100%" }}>
       <Text>Today</Text>
       <List>
         {waterEntries.map((waterEntry) => {
@@ -91,14 +92,14 @@ const Logs = () => {
             <ListItem>
               {waterEntry.date && format(parseISO(waterEntry.date), "h:mm a")}{" "}
               {waterEntry.waterAmount}ml
-              <div onClick={() => handleDelete(waterEntry._id)}>
+              <Box onClick={() => handleDelete(waterEntry._id)}>
                 <DeleteIcon />
-              </div>
+              </Box>
             </ListItem>
           );
         })}
       </List>
-    </div>
+    </Box>
   );
 };
 
