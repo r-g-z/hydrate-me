@@ -19,7 +19,7 @@ const EditProfile = () => {
   }, []);
 
   return (
-    <Box sx={{ width: "100%" }}>
+    <Box sx={{ width: "100%", mb: "4rem" }}>
       {user && (
         <ProfileForm
           initialState={{

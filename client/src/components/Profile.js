@@ -55,7 +55,13 @@ const Profile = ({ authorised, handleLogout }) => {
         <Text fontSize={"30px"}>{user.username}</Text>
       </Box>
       <Box
-        sx={{ border: "1px", p: "5px", mt: "10px" }}
+        sx={{
+          border: "1px",
+          px: "1rem",
+          py: "0.5rem",
+          mt: "10px",
+          borderRadius: "0.5rem",
+        }}
         onClick={() => {
           navigate("/profile/edit");
         }}

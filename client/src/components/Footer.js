@@ -11,6 +11,8 @@ const Footer = () => {
         bottom: "0",
         bgColor: "blue.300",
         width: "100%",
+        borderTopLeftRadius: "0.5rem",
+        borderTopRightRadius: "0.5rem",
       }}
     >
       <Button variant="ghost">

@@ -24,8 +24,10 @@ const Register = (props) => {
       mode: "cors",
     });
     const data = await res.json();
-    props.handleRegister(data);
-    navigate("/onboarding");
+    if (res.ok) {
+      props.handleRegister(data);
+      navigate("/onboarding");
+    }
   };
 
   return (

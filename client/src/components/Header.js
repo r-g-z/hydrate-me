@@ -32,9 +32,9 @@ const Header = () => {
           fontSize: "22px",
         }}
       >
-        ☀️
-        <Switch onChange={toggleColorMode} />
         🌑
+        <Switch onChange={toggleColorMode} />
+        ☀️
       </Box>
     </Box>
   );

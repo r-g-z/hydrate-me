@@ -1,13 +1,14 @@
 import { extendTheme } from "@chakra-ui/react";
 
 const config = {
-  initialColorMode: "light",
+  initialColorMode: "dark",
   useSystemColorMode: false,
 };
 
 const theme = extendTheme({
   config,
   components: { Button: { variants: { solid: { bg: "blue.200" } } } },
+  fonts: { heading: `"Gaegu", cursive`, body: `"Gaegu", cursive` },
 });
 
 export default theme;

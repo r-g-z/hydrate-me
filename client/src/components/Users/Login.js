@@ -1,11 +1,12 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Login.css";
 import { Heading, Text, Box, Button, Input } from "@chakra-ui/react";
 import { BsFillArrowLeftSquareFill } from "react-icons/bs";
 
 const Login = (props) => {
   const [fields, setFields] = useState({ username: "", password: "" });
+  const navigate = useNavigate();
 
   const handleChange = (event) => {
     setFields({
@@ -24,7 +25,10 @@ const Login = (props) => {
     const data = await res.json();
     console.log(data.msg);
     console.log(data.user.id);
-    props.handleLogin(data);
+    if (res.ok) {
+      props.handleLogin(data);
+      navigate("/dashboard");
+    }
   };
 
   return (
@@ -54,7 +58,7 @@ const Login = (props) => {
           id="password"
         />
       </Box>
-      <Button className="marginlg" type="submit" onClick={"/dashboard"}>
+      <Button className="marginlg" type="submit">
         Login
       </Button>
       <Text className="marginlg">No account yet? Sign up for free </Text>

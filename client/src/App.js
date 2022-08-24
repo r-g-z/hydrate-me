@@ -25,7 +25,6 @@ const App = () => {
   const handleAuth = (authed) => {
     setAuthorised(authed.authorised);
     setUser(authed.user);
-    navigate("/dashboard");
   };
 
   const handleLogout = () => {
