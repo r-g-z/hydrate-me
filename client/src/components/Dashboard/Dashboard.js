@@ -107,19 +107,27 @@ const Dashboard = (props) => {
   }
 
   return (
-    <Box sx={{ width: "100%" }}>
-      <Box>
-        <Heading sx={{ mb: "10px" }}>Feeling Parched?</Heading>
-        <CircularProgress value={waterPercentage} size="100px" color="blue.300">
+    <Box sx={{ width: "100%", mb: "100px" }}>
+      <Heading sx={{ mb: "10px" }}>Feeling Parched?</Heading>
+      <Box sx={{ display: "flex", justifyContent: "center" }}>
+        <CircularProgress value={waterPercentage} size="200px" color="blue.300">
           <CircularProgressLabel>{waterPercentage}%</CircularProgressLabel>
         </CircularProgress>
       </Box>
       <Box>
+        <Box sx={{ width: "100%" }}>
+          <AddDrinks addCups={addCups} />
+        </Box>
         <Flex direction="column">
-          <Heading sx={{ mb: "10px" }}>Daily Goal</Heading>
-          <Text>{user.daily_goal}ml</Text>
+          <Heading sx={{ mb: "5px", mt: "10px" }}>Daily Goal </Heading>
+
+          <Text fontSize="20px">{user.daily_goal}ml</Text>
         </Flex>
-        <Text fontSize="2xl">Today</Text>
+        <Box sx={{ mt: "8px" }}>
+          <Text fontSize="2xl" as="b">
+            Today
+          </Text>
+        </Box>
         <List>
           {waterEntries.map((waterEntry) => {
             return (
@@ -137,7 +145,6 @@ const Dashboard = (props) => {
           })}
         </List>
       </Box>
-      <AddDrinks addCups={addCups} />
     </Box>
   );
 };

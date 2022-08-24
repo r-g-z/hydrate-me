@@ -84,7 +84,7 @@ const Logs = () => {
 
   return (
     <div>
-      <Text>Today/yesterday</Text>
+      <Text>Today</Text>
       <List>
         {waterEntries.map((waterEntry) => {
           return (

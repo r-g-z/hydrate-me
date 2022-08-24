@@ -25,8 +25,12 @@ const AddDrinks = (props) => {
 
   return (
     <>
-      <Button onClick={onOpen}>
-        <BsCupFill />
+      <Button
+        leftIcon={<BsCupFill />}
+        onClick={onOpen}
+        sx={{ width: "100%", mt: "10px" }}
+      >
+        + Water
       </Button>
       <Drawer placement={"bottom"} isOpen={isOpen} onClose={onClose}>
         <DrawerOverlay />
