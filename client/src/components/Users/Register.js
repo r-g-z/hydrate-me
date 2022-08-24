@@ -1,11 +1,12 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Login.css";
 import { Heading, Text, Box, Button, Input } from "@chakra-ui/react";
 import { BsFillArrowLeftSquareFill } from "react-icons/bs";
 
 const Register = (props) => {
   const [fields, setFields] = useState({ username: "", password: "" });
+  const navigate = useNavigate();
 
   const handleChange = (event) => {
     setFields({
@@ -23,8 +24,8 @@ const Register = (props) => {
       mode: "cors",
     });
     const data = await res.json();
-    console.log(data);
     props.handleRegister(data);
+    navigate("/onboarding");
   };
 
   return (
@@ -54,7 +55,7 @@ const Register = (props) => {
           id="password"
         />
       </Box>
-      <Button className="marginlg" type="submit" onClick={"/onboarding"}>
+      <Button className="marginlg" type="submit">
         Register
       </Button>
       <Text className="marginlg">Already have an account? </Text>

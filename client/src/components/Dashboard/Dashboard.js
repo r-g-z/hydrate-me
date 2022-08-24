@@ -16,6 +16,7 @@ import { DeleteIcon } from "@chakra-ui/icons";
 import { endOfDay, format, parseISO, startOfDay } from "date-fns";
 import AddDrinks from "../Form/AddDrinks";
 import { Link } from "react-router-dom";
+import WaterLogs from "../WaterLogs/WaterLogs";
 
 const Dashboard = (props) => {
   const [user, setUser] = useState(null);
@@ -108,8 +109,8 @@ const Dashboard = (props) => {
 
   return (
     <Box sx={{ width: "100%", mb: "100px" }}>
-      <Heading sx={{ mb: "10px" }}>Feeling Parched?</Heading>
-      <Box sx={{ display: "flex", justifyContent: "center" }}>
+      <Heading>Feeling Parched?</Heading>
+      <Box sx={{ display: "flex", justifyContent: "center", my: "24px" }}>
         <CircularProgress value={waterPercentage} size="200px" color="blue.300">
           <CircularProgressLabel>{waterPercentage}%</CircularProgressLabel>
         </CircularProgress>
@@ -118,32 +119,17 @@ const Dashboard = (props) => {
         <Box sx={{ width: "100%" }}>
           <AddDrinks addCups={addCups} />
         </Box>
-        <Flex direction="column">
-          <Heading sx={{ mb: "5px", mt: "10px" }}>Daily Goal </Heading>
+        <Flex direction="column" sx={{ mt: "1.5rem" }}>
+          <Heading>Daily Goal </Heading>
 
           <Text fontSize="18px">{user.daily_goal}ml</Text>
         </Flex>
-        <Box sx={{ mt: "8px" }}>
+        <Box sx={{ mt: "1.5rem" }}>
           <Text fontSize="2xl" as="b">
             Today
           </Text>
         </Box>
-        <List>
-          {waterEntries.map((waterEntry) => {
-            return (
-              <Box sx={{ display: "flex", alignItems: "center" }}>
-                <ListItem sx={{ fontSize: "18px" }}>
-                  {waterEntry.date &&
-                    format(parseISO(waterEntry.date), "h:mm a")}{" "}
-                  {waterEntry.waterAmount}ml{" "}
-                  <Button size="sm">
-                    <DeleteIcon onClick={() => handleDelete(waterEntry._id)} />
-                  </Button>
-                </ListItem>
-              </Box>
-            );
-          })}
-        </List>
+        <WaterLogs waterEntries={waterEntries} handleDelete={handleDelete} />
       </Box>
     </Box>
   );

@@ -14,6 +14,7 @@ import {
   Button,
 } from "@chakra-ui/react";
 import { DeleteIcon } from "@chakra-ui/icons";
+import WaterLogs from "./WaterLogs/WaterLogs";
 
 const Logs = () => {
   const [user, setUser] = useState(null);
@@ -87,23 +88,7 @@ const Logs = () => {
   return (
     <Box sx={{ width: "100%" }}>
       <Heading>Today</Heading>
-
-      <List sx={{ fontSize: "18px" }}>
-        {waterEntries.map((waterEntry) => {
-          return (
-            <ListItem sx={{ display: "flex", alignItems: "center" }}>
-              {waterEntry.date && format(parseISO(waterEntry.date), "h:mm a")}{" "}
-              {waterEntry.waterAmount}ml
-              <Button
-                sx={{ ml: "5px", mb: "2px" }}
-                onClick={() => handleDelete(waterEntry._id)}
-              >
-                <DeleteIcon />
-              </Button>
-            </ListItem>
-          );
-        })}
-      </List>
+      <WaterLogs waterEntries={waterEntries} handleDelete={handleDelete} />
     </Box>
   );
 };

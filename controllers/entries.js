@@ -6,6 +6,7 @@ const WaterEntry = require("../models/entry.js");
 waterRouter.get("/", async (req, res) => {
   const waterEntries = await WaterEntry.find({
     date: { $gte: req.query.startDate, $lt: req.query.endDate },
+    user_id: req.session.currentUser._id,
   }).exec();
   console.log("query", req.query);
   res.status(200).json(waterEntries);

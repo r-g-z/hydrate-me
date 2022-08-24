@@ -34,7 +34,7 @@ const Home = () => {
         </Box>
       </Box>
       <br></br>
-      <Box sx={{ ml: "10px" }}>
+      <Box sx={{ ml: "10px", fontSize: "20px" }}>
         <Text as="i">Lacking in water?</Text>
         <Text>
           {" "}

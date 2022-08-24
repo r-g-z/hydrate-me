@@ -31,11 +31,20 @@ const OnboardSummary = (props) => {
 
   return (
     <Box sx={{ width: "100%" }}>
-      <Text fontSize={"20px"} sx={{ mb: "10px" }}>
+      <Text fontSize={"24px"} sx={{ mb: "10px" }}>
         Hi {user.username}
       </Text>
-      <Heading as="h1">Your Daily Goal</Heading>
-      <Text fontSize="2xl">{user.daily_goal}ml</Text>
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          flexDir: "column",
+        }}
+      >
+        <Heading as="h1">Your Daily Goal</Heading>
+        <Text fontSize="2xl">{user.daily_goal}ml</Text>
+      </Box>
       <Image
         borderRadius="full"
         objectFit={"contain"}

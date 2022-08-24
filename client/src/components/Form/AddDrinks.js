@@ -41,6 +41,7 @@ const AddDrinks = (props) => {
           <DrawerBody>
             <Button onClick={handleClick}>Cup 250ml</Button>
           </DrawerBody>
+          <DrawerFooter />
         </DrawerContent>
       </Drawer>
     </>

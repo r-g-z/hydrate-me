@@ -7,7 +7,7 @@ const config = {
 
 const theme = extendTheme({
   config,
-  components: { Button: { defaultProps: { colorScheme: { bg: "blue.100" } } } },
+  components: { Button: { variants: { solid: { bg: "blue.200" } } } },
 });
 
 export default theme;

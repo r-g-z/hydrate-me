@@ -20,7 +20,7 @@ const Header = () => {
       "
           alt="bottle"
         />
-        <Box sx={{ ml: "10px", fontSize: "28px" }}>
+        <Box sx={{ ml: "10px", fontSize: "32px" }}>
           <Link to="/dashboard">Hydrate Me</Link>
         </Box>
       </Box>
@@ -29,7 +29,7 @@ const Header = () => {
           display: "flex",
           gap: "3px",
           alignItems: "center",
-          fontSize: "20px",
+          fontSize: "22px",
         }}
       >
         ☀️

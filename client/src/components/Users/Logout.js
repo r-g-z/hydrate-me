@@ -1,11 +1,14 @@
 import { Button } from "@chakra-ui/react";
+import { useNavigate } from "react-router-dom";
 
-const Logout = (props) => {
+const Logout = () => {
+  const navigate = useNavigate();
   const handleClick = async () => {
     const res = await fetch("/users/logout", {
       method: "POST",
     });
-    props.handleLogout();
+    // handleLogout();
+    navigate("/");
   };
 
   return (

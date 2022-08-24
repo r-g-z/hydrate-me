@@ -15,6 +15,7 @@ import Logs from "./components/Logs";
 import Profile from "./components/Profile";
 import EditProfile from "./components/EditProfile";
 import Footer from "./components/Footer";
+import theme from "./theme.js";
 
 const App = () => {
   const [authorised, setAuthorised] = useState(null);
@@ -44,7 +45,7 @@ const App = () => {
   }, []);
 
   return (
-    <ChakraProvider>
+    <ChakraProvider theme={theme}>
       <div className="App">
         <Container centerContent>
           <Header authorised={authorised} handleLogout={handleLogout} />
