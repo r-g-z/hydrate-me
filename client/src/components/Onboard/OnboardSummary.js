@@ -1,7 +1,6 @@
-import Onboard from "./Onboard";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Stack, Button, Heading, Text } from "@chakra-ui/react";
+import { Stack, Button, Heading, Text, Box, Image } from "@chakra-ui/react";
 
 const OnboardSummary = (props) => {
   const [user, setUser] = useState(null);
@@ -31,22 +30,41 @@ const OnboardSummary = (props) => {
   }
 
   return (
-    <div>
-      <Text>Hi {user.username} </Text>
-      <Heading as="h1">Daily Goal</Heading>
+    <Box sx={{ width: "100%" }}>
+      <Text fontSize={"20px"} sx={{ mb: "10px" }}>
+        Hi {user.username}
+      </Text>
+      <Heading as="h1">Your Daily Goal</Heading>
       <Text fontSize="2xl">{user.daily_goal}ml</Text>
+      <Image
+        borderRadius="full"
+        objectFit={"contain"}
+        sx={"maxHeight: 100%"}
+        src="/img/cup.gif"
+        alt="onboard picture"
+      />
 
       <Stack direction="row" spacing={4} align="center">
-        <Button
-          colorScheme="teal"
-          onClick={handleClick}
-          variant="outline"
-          type="submit"
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "flex-end",
+            width: "100%",
+            mt: "130px",
+          }}
         >
-          Next
-        </Button>
+          <Button
+            colorScheme="#015C92"
+            onClick={handleClick}
+            variant="outline"
+            type="submit"
+            size="lg"
+          >
+            Next
+          </Button>
+        </Box>
       </Stack>
-    </div>
+    </Box>
   );
 };
 

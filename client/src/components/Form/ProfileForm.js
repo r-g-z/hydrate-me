@@ -102,9 +102,16 @@ const ProfileForm = ({ onSuccessSubmit, initialState, button }) => {
           {options.map((value) => {
             const radio = getRadioProps({ value });
             return (
-              <RadioCard key={value} {...radio}>
-                {value}
-              </RadioCard>
+              <Box
+                sx={{
+                  width: "50%",
+                  "@media (min-width: 450px)": { width: "auto" },
+                }}
+              >
+                <RadioCard key={value} {...radio}>
+                  {value}
+                </RadioCard>
+              </Box>
             );
           })}
         </HStack>
@@ -129,16 +136,19 @@ const ProfileForm = ({ onSuccessSubmit, initialState, button }) => {
         <Box
           sx={{
             display: "flex",
-            justifyContent: "center",
-            position: "fixed",
-            bottom: "0",
+            justifyContent: "flex-end",
+            width: "100%",
+            mt: "130px",
           }}
         >
-          <Stack direction="row" spacing={4} align="center">
-            <Button colorScheme="teal" variant="outline" type="submit" sx={{}}>
-              {button}
-            </Button>
-          </Stack>
+          <Button
+            colorScheme="#015C92"
+            variant="outline"
+            type="submit"
+            size="lg"
+          >
+            {button}
+          </Button>
         </Box>
       </form>
     </Box>
