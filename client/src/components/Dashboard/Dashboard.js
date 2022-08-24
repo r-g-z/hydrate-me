@@ -100,7 +100,7 @@ const Dashboard = (props) => {
 
   if (!user) {
     return (
-      <Box>
+      <Box sx={{ fontSize: "20px" }}>
         <Link to="/login">Login</Link> or <Link to="/register">Register</Link>
       </Box>
     );
@@ -121,7 +121,7 @@ const Dashboard = (props) => {
         <Flex direction="column">
           <Heading sx={{ mb: "5px", mt: "10px" }}>Daily Goal </Heading>
 
-          <Text fontSize="20px">{user.daily_goal}ml</Text>
+          <Text fontSize="18px">{user.daily_goal}ml</Text>
         </Flex>
         <Box sx={{ mt: "8px" }}>
           <Text fontSize="2xl" as="b">
@@ -132,7 +132,7 @@ const Dashboard = (props) => {
           {waterEntries.map((waterEntry) => {
             return (
               <Box sx={{ display: "flex", alignItems: "center" }}>
-                <ListItem>
+                <ListItem sx={{ fontSize: "18px" }}>
                   {waterEntry.date &&
                     format(parseISO(waterEntry.date), "h:mm a")}{" "}
                   {waterEntry.waterAmount}ml{" "}

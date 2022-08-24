@@ -24,7 +24,14 @@ const Header = () => {
           <Link to="/dashboard">Hydrate Me</Link>
         </Box>
       </Box>
-      <Box sx={{ display: "flex", gap: "3px", alignItems: "center" }}>
+      <Box
+        sx={{
+          display: "flex",
+          gap: "3px",
+          alignItems: "center",
+          fontSize: "20px",
+        }}
+      >
         ☀️
         <Switch onChange={toggleColorMode} />
         🌑

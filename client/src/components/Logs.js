@@ -88,7 +88,7 @@ const Logs = () => {
     <Box sx={{ width: "100%" }}>
       <Heading>Today</Heading>
 
-      <List>
+      <List sx={{ fontSize: "18px" }}>
         {waterEntries.map((waterEntry) => {
           return (
             <ListItem sx={{ display: "flex", alignItems: "center" }}>

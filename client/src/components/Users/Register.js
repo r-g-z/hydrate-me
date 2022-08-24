@@ -54,7 +54,7 @@ const Register = (props) => {
           id="password"
         />
       </Box>
-      <Button className="marginlg" type="submit">
+      <Button className="marginlg" type="submit" onClick={"/onboarding"}>
         Register
       </Button>
       <Text className="marginlg">Already have an account? </Text>

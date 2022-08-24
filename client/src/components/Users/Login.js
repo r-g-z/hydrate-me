@@ -54,7 +54,7 @@ const Login = (props) => {
           id="password"
         />
       </Box>
-      <Button className="marginlg" type="submit">
+      <Button className="marginlg" type="submit" onClick={"/dashboard"}>
         Login
       </Button>
       <Text className="marginlg">No account yet? Sign up for free </Text>

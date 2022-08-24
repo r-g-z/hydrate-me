@@ -34,25 +34,39 @@ const Profile = ({ authorised, handleLogout }) => {
           display: "flex",
           justifyContent: "flex-end",
           width: "100%",
-          mt: "10px",
         }}
       >
         <Logout handleLogout={handleLogout} />
       </Box>
-      <Image
-        borderRadius="full"
-        boxSize="100px"
-        src="/img/cute-smiling-hi.webp"
-        alt="profile-pic"
-      />
-      <Text>{user.username}</Text>
       <Box
-        sx={{ border: "1px" }}
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+        }}
+      >
+        <Image
+          borderRadius="full"
+          border="1px"
+          boxSize="120px"
+          src="/img/cute-smiling-hi.webp"
+          alt="profile-pic"
+        />
+        <Text fontSize={"30px"}>{user.username}</Text>
+      </Box>
+      <Box
+        sx={{ border: "1px", p: "5px", mt: "10px" }}
         onClick={() => {
           navigate("/profile/edit");
         }}
       >
-        <HStack>
+        <HStack
+          sx={{
+            display: "flex",
+            justifyContent: "space-between",
+            fontSize: "20px",
+          }}
+        >
           <Box sx={{ display: "flex", alignItems: "center" }}>
             <BsPersonFill />
             <Text>Gender</Text>
@@ -66,17 +80,26 @@ const Profile = ({ authorised, handleLogout }) => {
             <Text>Activity</Text>
           </Box>
         </HStack>
-        <HStack>
+        <HStack
+          sx={{
+            display: "flex",
+            justifyContent: "space-between",
+            fontSize: "18px",
+          }}
+        >
           <Text>{user.gender}</Text>
           <Text>{user.weight}</Text>
           <Text>{user.exercise}</Text>
         </HStack>
       </Box>
-      <Box sx={{ display: "flex", alignItems: "center" }}>
-        <Box sx={{ color: "#53A7D8" }}>
+      <Box sx={{ display: "flex", alignItems: "center", fontSize: "20px" }}>
+        <Box sx={{ color: "#53A7D8", m: "15px 5px" }}>
           <ImDroplet />
         </Box>
-        <Text>Daily Goal {user.daily_goal}ml</Text>
+        <Text>
+          {" "}
+          <b>Daily Goal</b> {user.daily_goal}ml
+        </Text>
       </Box>
     </Box>
   );
