@@ -10,6 +10,7 @@ const Header = ({ authorised, handleLogout }) => {
         alignItems: "center",
         width: "100%",
         justifyContent: "space-between",
+        mb: "15px",
       }}
     >
       <Box sx={{ display: "flex" }}>

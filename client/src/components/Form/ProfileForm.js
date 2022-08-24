@@ -8,6 +8,7 @@ import {
   Text,
   NumberInput,
   NumberInputField,
+  Box,
 } from "@chakra-ui/react";
 import RadioCard from "./RadioCard";
 
@@ -94,43 +95,53 @@ const ProfileForm = ({ onSuccessSubmit, initialState, button }) => {
   const exerciseGroup = getExerciseRootProps();
 
   return (
-    <form onSubmit={handleSubmit}>
-      <Text>Gender</Text>
-      {/* <input name="gender" /> */}
-      {/* <label className="form-label" htmlFor="gender"></label> */}
-      <HStack {...group}>
-        {options.map((value) => {
-          const radio = getRadioProps({ value });
-          return (
-            <RadioCard key={value} {...radio}>
-              {value}
-            </RadioCard>
-          );
-        })}
-      </HStack>
-      <Text>Weight</Text>
+    <Box sx={{ width: "100%" }}>
+      <form onSubmit={handleSubmit}>
+        <Text sx={{ mb: "5px" }}>Gender</Text>
+        <HStack {...group} sx={{ mb: "10px" }}>
+          {options.map((value) => {
+            const radio = getRadioProps({ value });
+            return (
+              <RadioCard key={value} {...radio}>
+                {value}
+              </RadioCard>
+            );
+          })}
+        </HStack>
+        <Box sx={{ mb: "10px" }}>
+          <Text sx={{ mb: "5px" }}>Weight</Text>
 
-      <NumberInput name="weight" type="number" defaultValue={fields.weight}>
-        <NumberInputField onChange={handleChange} />
-      </NumberInput>
-      <Text>Weekly Exercise Activity</Text>
-      <VStack {...exerciseGroup}>
-        {exerciseOptions.map((value) => {
-          const radio = getExerciseRadioProps({ value });
-          return (
-            <RadioCard key={value} {...radio}>
-              {value}
-            </RadioCard>
-          );
-        })}
-      </VStack>
-
-      <Stack direction="row" spacing={4} align="center">
-        <Button colorScheme="teal" variant="outline" type="submit">
-          {button}
-        </Button>
-      </Stack>
-    </form>
+          <NumberInput name="weight" type="number" defaultValue={fields.weight}>
+            <NumberInputField onChange={handleChange} />
+          </NumberInput>
+        </Box>
+        <Text sx={{ mb: "5px" }}>Weekly Exercise Activity</Text>
+        <VStack {...exerciseGroup}>
+          {exerciseOptions.map((value) => {
+            const radio = getExerciseRadioProps({ value });
+            return (
+              <RadioCard key={value} {...radio}>
+                {value}
+              </RadioCard>
+            );
+          })}
+        </VStack>
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            position: "fixed",
+            bottom: "0",
+          }}
+        >
+          <Stack direction="row" spacing={4} align="center">
+            <Button colorScheme="teal" variant="outline" type="submit" sx={{}}>
+              {button}
+            </Button>
+          </Stack>
+        </Box>
+      </form>
+    </Box>
   );
 };
 

@@ -1,22 +1,7 @@
 import { useState } from "react";
-import {
-  useRadioGroup,
-  HStack,
-  VStack,
-  Stack,
-  Button,
-  Text,
-} from "@chakra-ui/react";
-import RadioCard from "../Form/RadioCard";
-import {
-  NumberInput,
-  NumberInputField,
-  NumberInputStepper,
-  NumberIncrementStepper,
-  NumberDecrementStepper,
-} from "@chakra-ui/react";
 import OnboardSummary from "./OnboardSummary";
 import ProfileForm from "../Form/ProfileForm";
+import { Text } from "@chakra-ui/react";
 
 const initialState = {
   gender: "",
@@ -35,9 +20,9 @@ const Onboard = () => {
     <>
       {step === 1 && (
         <>
-          <p>
+          <Text sx={{ mb: "10px" }}>
             A few simple steps to generate a suitable drinking plan for you.
-          </p>
+          </Text>
           <ProfileForm
             onSuccessSubmit={incrementStep}
             initialState={initialState}

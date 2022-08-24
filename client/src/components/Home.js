@@ -25,10 +25,10 @@ const Home = () => {
             translate: "-50% -50%",
           }}
         >
-          <Button>
+          <Button sx={{ bgColor: "white", mb: "5px" }}>
             <Link to="/login">Login</Link>
           </Button>
-          <Button>
+          <Button sx={{ bgColor: "white" }}>
             <Link to="/register">Register</Link>
           </Button>
         </Box>

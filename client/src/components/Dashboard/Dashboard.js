@@ -100,40 +100,45 @@ const Dashboard = (props) => {
 
   if (!user) {
     return (
-      <div>
+      <Box>
         <Link to="/login">Login</Link> or <Link to="/register">Register</Link>
-      </div>
+      </Box>
     );
   }
 
   return (
-    <div>
-      <Heading>Feeling Parched?</Heading>
-      <CircularProgress value={waterPercentage} size="100px" color="blue.300">
-        <CircularProgressLabel>{waterPercentage}%</CircularProgressLabel>
-      </CircularProgress>
-      <Flex direction="column">
-        <Heading>Daily Goal</Heading>
-        <Text>{user.daily_goal}ml</Text>
-      </Flex>
-      <Text fontSize="2xl">Today</Text>
-      <List>
-        {waterEntries.map((waterEntry) => {
-          return (
-            <Box sx={{ display: "flex", alignItems: "center" }}>
-              <ListItem>
-                {waterEntry.date && format(parseISO(waterEntry.date), "h:mm a")}{" "}
-                {waterEntry.waterAmount}ml{" "}
-                <Button size="sm">
-                  <DeleteIcon onClick={() => handleDelete(waterEntry._id)} />
-                </Button>
-              </ListItem>
-            </Box>
-          );
-        })}
-      </List>
+    <Box sx={{ width: "100%" }}>
+      <Box>
+        <Heading sx={{ mb: "10px" }}>Feeling Parched?</Heading>
+        <CircularProgress value={waterPercentage} size="100px" color="blue.300">
+          <CircularProgressLabel>{waterPercentage}%</CircularProgressLabel>
+        </CircularProgress>
+      </Box>
+      <Box>
+        <Flex direction="column">
+          <Heading sx={{ mb: "10px" }}>Daily Goal</Heading>
+          <Text>{user.daily_goal}ml</Text>
+        </Flex>
+        <Text fontSize="2xl">Today</Text>
+        <List>
+          {waterEntries.map((waterEntry) => {
+            return (
+              <Box sx={{ display: "flex", alignItems: "center" }}>
+                <ListItem>
+                  {waterEntry.date &&
+                    format(parseISO(waterEntry.date), "h:mm a")}{" "}
+                  {waterEntry.waterAmount}ml{" "}
+                  <Button size="sm">
+                    <DeleteIcon onClick={() => handleDelete(waterEntry._id)} />
+                  </Button>
+                </ListItem>
+              </Box>
+            );
+          })}
+        </List>
+      </Box>
       <AddDrinks addCups={addCups} />
-    </div>
+    </Box>
   );
 };
 

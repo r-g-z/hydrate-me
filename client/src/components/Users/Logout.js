@@ -9,7 +9,11 @@ const Logout = (props) => {
   };
 
   return (
-    <Button className="logout_button" onClick={handleClick}>
+    <Button
+      sx={{ bgColor: "	#e4f3ff" }}
+      className="logout_button"
+      onClick={handleClick}
+    >
       Logout
     </Button>
   );
