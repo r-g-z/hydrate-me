@@ -1,13 +1,28 @@
-import { Text } from "@chakra-ui/react";
+import { Box, Button, Container, Text } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <div>
-      <Link to="/logs">Water Logs</Link>
-      <Link to="/dashboard">Home</Link>
-      <Link to="/profile">Profile</Link>
-    </div>
+    <Box
+      sx={{
+        display: "flex",
+        justifyContent: "space-between",
+        position: "fixed",
+        bottom: "0",
+        bgColor: "#BCE6FF",
+        width: "100%",
+      }}
+    >
+      <Button variant="ghost">
+        <Link to="/logs">Water Logs</Link>
+      </Button>
+      <Button variant="ghost">
+        <Link to="/dashboard">Home</Link>
+      </Button>
+      <Button variant="ghost">
+        <Link to="/profile">Profile</Link>
+      </Button>
+    </Box>
   );
 };
 

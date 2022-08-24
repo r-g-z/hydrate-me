@@ -58,7 +58,7 @@ const Login = (props) => {
         Login
       </Button>
       <Text className="marginlg">No account yet? Sign up for free </Text>
-      <Text>
+      <Text as="i">
         <Link to="/register">Register here</Link>
       </Text>
     </form>

@@ -1,4 +1,4 @@
-import Button from "react-bootstrap/Button";
+import { Button } from "@chakra-ui/react";
 
 const Logout = (props) => {
   const handleClick = async () => {
@@ -9,11 +9,7 @@ const Logout = (props) => {
   };
 
   return (
-    <Button
-      className="logout_button"
-      variant="outline-success"
-      onClick={handleClick}
-    >
+    <Button className="logout_button" onClick={handleClick}>
       Logout
     </Button>
   );

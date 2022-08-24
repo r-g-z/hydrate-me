@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Login.css";
-import { Heading, Text } from "@chakra-ui/react";
+import { Heading, Text, Box, Button, Input } from "@chakra-ui/react";
 import { BsFillArrowLeftSquareFill } from "react-icons/bs";
 
 const Register = (props) => {
@@ -30,33 +30,38 @@ const Register = (props) => {
   return (
     <form onSubmit={handleSubmit}>
       <Heading as="h3">Register</Heading>
-      <div>
+      <Box>
         <label className="user" htmlFor="username">
           Username
         </label>
-        <input
+        <Input
           value={fields.username}
           onChange={handleChange}
           name="username"
           type="text"
           id="username"
         />
-      </div>
-      <div className="marginlg">
+      </Box>
+      <Box className="marginlg">
         <label className="user" htmlFor="password">
           Password
         </label>
-        <input
+        <Input
           value={fields.password}
           onChange={handleChange}
           name="password"
           type="password"
           id="password"
         />
-      </div>
-      <input className="marginlg" type="submit" value="Register" />
-      <Text className="marginlg">
-        Already have an account? <Link to="/login">Login here</Link>
+      </Box>
+      <Button className="marginlg" type="submit">
+        Register
+      </Button>
+      <Text className="marginlg">Already have an account? </Text>
+      <Text as="i">
+        <Link to="/login" as="i">
+          Login here
+        </Link>
       </Text>
     </form>
   );
