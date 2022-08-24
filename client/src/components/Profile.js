@@ -28,7 +28,17 @@ const Profile = ({ authorised, handleLogout }) => {
   }
 
   return (
-    <Box>
+    <Box sx={{ width: "100%" }}>
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "flex-end",
+          width: "100%",
+          mt: "10px",
+        }}
+      >
+        <Logout handleLogout={handleLogout} />
+      </Box>
       <Image
         borderRadius="full"
         boxSize="100px"
@@ -68,8 +78,6 @@ const Profile = ({ authorised, handleLogout }) => {
         </Box>
         <Text>Daily Goal {user.daily_goal}ml</Text>
       </Box>
-
-      <Logout handleLogout={handleLogout} />
     </Box>
   );
 };

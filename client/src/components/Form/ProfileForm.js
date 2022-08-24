@@ -142,7 +142,7 @@ const ProfileForm = ({ onSuccessSubmit, initialState, button }) => {
           }}
         >
           <Button
-            colorScheme="#015C92"
+            colorScheme="blue.300"
             variant="outline"
             type="submit"
             size="lg"

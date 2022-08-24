@@ -1,6 +1,7 @@
 import ProfileForm from "./Form/ProfileForm";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { Box } from "@chakra-ui/react";
 
 const EditProfile = () => {
   const [user, setUser] = useState(null);
@@ -18,7 +19,7 @@ const EditProfile = () => {
   }, []);
 
   return (
-    <div>
+    <Box sx={{ width: "100%" }}>
       {user && (
         <ProfileForm
           initialState={{
@@ -32,7 +33,7 @@ const EditProfile = () => {
           button={"Update"}
         />
       )}
-    </div>
+    </Box>
   );
 };
 

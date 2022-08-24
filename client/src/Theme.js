@@ -5,6 +5,9 @@ const config = {
   useSystemColorMode: false,
 };
 
-const theme = extendTheme({ config });
+const theme = extendTheme({
+  config,
+  components: { Button: { variants: { solid: { bg: "blue.100" } } } },
+});
 
 export default theme;
