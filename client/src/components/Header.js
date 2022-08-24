@@ -11,7 +11,9 @@ const Header = ({ authorised, handleLogout }) => {
       "
         alt="bottle"
       />
-      <Link to="/dashboard">Hydrate Me</Link>
+      <Box sx={{ ml: "10px", fontSize: "28px" }}>
+        <Link to="/dashboard">Hydrate Me</Link>
+      </Box>
       {authorised && <Logout handleLogout={handleLogout} />}
     </Box>
   );
