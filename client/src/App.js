@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
-import { ChakraProvider } from "@chakra-ui/react";
+import { ChakraProvider, Container } from "@chakra-ui/react";
 
 import "./App.css";
 
@@ -46,53 +46,55 @@ const App = () => {
   return (
     <ChakraProvider>
       <div className="App">
-        <Header authorised={authorised} handleLogout={handleLogout} />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/onboarding" element={<Onboard />} />
-          <Route
-            path="/register"
-            element={<Register handleRegister={handleAuth} />}
-          />
-          <Route path="/login" element={<Login handleLogin={handleAuth} />} />
-          <Route
-            path="logout"
-            element={<Logout handleLogout={handleLogout} />}
-          />
-          <Route
-            path="/dashboard"
-            element={
-              <>
-                <Dashboard />
-                <Footer />
-              </>
-            }
-          />
-          <Route
-            path="/logs"
-            element={
-              <>
-                <Logs /> <Footer />
-              </>
-            }
-          />
-          <Route
-            path="/profile"
-            element={
-              <>
-                <Profile /> <Footer />
-              </>
-            }
-          />
-          <Route
-            path="/profile/edit"
-            element={
-              <>
-                <EditProfile /> <Footer />
-              </>
-            }
-          />
-        </Routes>
+        <Container centerContent>
+          <Header authorised={authorised} handleLogout={handleLogout} />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/onboarding" element={<Onboard />} />
+            <Route
+              path="/register"
+              element={<Register handleRegister={handleAuth} />}
+            />
+            <Route path="/login" element={<Login handleLogin={handleAuth} />} />
+            <Route
+              path="logout"
+              element={<Logout handleLogout={handleLogout} />}
+            />
+            <Route
+              path="/dashboard"
+              element={
+                <>
+                  <Dashboard />
+                  <Footer />
+                </>
+              }
+            />
+            <Route
+              path="/logs"
+              element={
+                <>
+                  <Logs /> <Footer />
+                </>
+              }
+            />
+            <Route
+              path="/profile"
+              element={
+                <>
+                  <Profile /> <Footer />
+                </>
+              }
+            />
+            <Route
+              path="/profile/edit"
+              element={
+                <>
+                  <EditProfile /> <Footer />
+                </>
+              }
+            />
+          </Routes>
+        </Container>
       </div>
     </ChakraProvider>
   );

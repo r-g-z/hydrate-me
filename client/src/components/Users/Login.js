@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Login.css";
-import { Heading, Text } from "@chakra-ui/react";
+import { Heading, Text, Box, Button, Input } from "@chakra-ui/react";
+import { BsFillArrowLeftSquareFill } from "react-icons/bs";
 
 const Login = (props) => {
   const [fields, setFields] = useState({ username: "", password: "" });
@@ -29,35 +30,37 @@ const Login = (props) => {
   return (
     <form onSubmit={handleSubmit}>
       <Heading as="h3">Log In</Heading>
-      <div>
+      <Box>
         <label className="user" htmlFor="username">
           Username
         </label>
-        <input
+        <Input
           value={fields.username}
           onChange={handleChange}
           name="username"
           type="text"
           id="username"
         />
-      </div>
-      <div className="marginlg">
+      </Box>
+      <Box className="marginlg">
         <label className="user" htmlFor="password">
           Password
         </label>
-        <input
+        <Input
           value={fields.password}
           onChange={handleChange}
           name="password"
           type="password"
           id="password"
         />
-      </div>
-      <input className="marginlg" type="submit" value="Login" />
-      <p className="marginlg">No account yet? Sign up for free </p>
-      <p>
+      </Box>
+      <Button className="marginlg" type="submit">
+        Login
+      </Button>
+      <Text className="marginlg">No account yet? Sign up for free </Text>
+      <Text>
         <Link to="/register">Register here</Link>
-      </p>
+      </Text>
     </form>
   );
 };

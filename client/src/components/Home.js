@@ -1,18 +1,36 @@
 import { Link } from "react-router-dom";
-import { Text } from "@chakra-ui/react";
+import { Button, Text } from "@chakra-ui/react";
 import { Image, Box } from "@chakra-ui/react";
 
 const Home = () => {
   return (
     <>
-      <Box>
-        <Image src="/img/drop.png" alt="water-drop" boxSize="sm" />
-        <Box sx={{ display: "flex", justifyContent: "center" }}>
-          <Link to="/login">Login</Link>
+      <Box sx={{ position: "relative" }}>
+        <Box boxSize="sm" sx={{ display: "flex", justifyContent: "center" }}>
+          <Image
+            src="/img/drop.png"
+            alt="water-drop"
+            objectFit={"contain"}
+            sx={{ maxHeight: "100%" }}
+          />
         </Box>
-        <br></br>
-        <Box sx={{ display: "flex", justifyContent: "center" }}>
-          <Link to="/register">Register</Link>
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            flexDirection: "column",
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            translate: "-50% -50%",
+          }}
+        >
+          <Button>
+            <Link to="/login">Login</Link>
+          </Button>
+          <Button>
+            <Link to="/register">Register</Link>
+          </Button>
         </Box>
       </Box>
       <br></br>

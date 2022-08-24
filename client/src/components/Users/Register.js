@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Login.css";
 import { Heading, Text } from "@chakra-ui/react";
+import { BsFillArrowLeftSquareFill } from "react-icons/bs";
 
 const Register = (props) => {
   const [fields, setFields] = useState({ username: "", password: "" });
