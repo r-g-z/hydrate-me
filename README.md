@@ -1,6 +1,7 @@
 # Hydrate Me
 
-blah blah
+This app is created for those who don't drink enough water. Everyone thinks 8 cups/2 Litres a day is enough but that's not true.
+For people who work in the office or home, or for people who gym daily and don't drink enough water. Did you know you are meant to drink more water if you sweat a lot?
 
 [View the app here](#)
 
@@ -31,10 +32,6 @@ Third-party library components, including:
 - [Icons from React Icons](https://react-icons.github.io/react-icons/)
 - [Fonts from Google Fonts](https://fonts.google.com/specimen/Gaegu?query=gaegu)
 
-## User stories
-
-<hr>
-
 ## Approach
 
 <hr>
@@ -45,12 +42,19 @@ Third-party library components, including:
 4. Set up the front end and back end
 5. Started creating the app whilist referring to wireframes
 
+### Bugs
+
 ### Wireframes
+
+<img src="./client/public/img/wireframe_1.png" width="1000px">
+<img src="./client/public/img/Wireframe_2.png" width="1000px">
 
 ### Future Updates
 
-### Bugs
+<img src="./client/public/img/Wireframe-goal.png" width="600px">
 
-## App
+## Mobile App - Dark and Light Mode
+
+<img src="./client/public/img/Dark.jpg" width="300px"><img src="./client/public/img/Light.jpg" width="300px">
 
 <hr>
