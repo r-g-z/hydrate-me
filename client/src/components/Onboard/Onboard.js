@@ -20,7 +20,7 @@ const Onboard = () => {
     <>
       {step === 1 && (
         <>
-          <Text sx={{ mb: "10px" }}>
+          <Text sx={{ mb: "10px", fontSize: "1.5rem" }}>
             A few simple steps to generate a suitable drinking plan for you.
           </Text>
           <ProfileForm
