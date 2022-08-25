@@ -93,7 +93,7 @@ const ProfileForm = ({ onSuccessSubmit, initialState, button }) => {
   const exerciseGroup = getExerciseRootProps();
 
   return (
-    <Box sx={{ width: "100%", fontSize: "18px" }}>
+    <Box sx={{ width: "100%", fontSize: "20px" }}>
       <form onSubmit={handleSubmit}>
         <Text sx={{ mb: "5px" }}>Gender</Text>
         <HStack {...group} sx={{ mb: "10px" }}>

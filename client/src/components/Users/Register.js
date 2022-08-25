@@ -71,7 +71,7 @@ const Register = (props) => {
         Register
       </Button>
       {error && (
-        <Alert status="error">
+        <Alert status="error" sx={{ mt: "0.5rem" }}>
           <AlertIcon />
           {error}
         </Alert>

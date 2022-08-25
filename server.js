@@ -32,6 +32,13 @@ app.use(express.urlencoded({ extended: false }));
 app.use("/users", usersRouter);
 app.use("/entries", entriesRouter);
 
+app.use(
+  cors({
+    origin: "hydrate-me-ui.herokuapp.com",
+    credentials: true,
+  })
+);
+
 mongoose.connect(dbURL, () => {
   console.log("Connected to hydrate db");
 });

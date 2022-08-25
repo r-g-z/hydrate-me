@@ -6,6 +6,7 @@ import {
   CircularProgress,
   CircularProgressLabel,
   Box,
+  Image,
 } from "@chakra-ui/react";
 import { endOfDay, format, parseISO, startOfDay } from "date-fns";
 import AddDrinks from "../Form/AddDrinks";
@@ -95,8 +96,15 @@ const Dashboard = (props) => {
 
   if (!user) {
     return (
-      <Box sx={{ fontSize: "20px" }}>
-        <Link to="/login">Login</Link> or <Link to="/register">Register</Link>
+      <Box sx={{ fontSize: "20px", textAlign: "center" }}>
+        <Image
+          borderRadius="full"
+          objectFit={"contain"}
+          sx={"maxHeight: 100%"}
+          src="/img/cup.gif"
+          alt="onboard picture"
+        />
+        Loading
       </Box>
     );
   }

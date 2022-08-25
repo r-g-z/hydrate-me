@@ -60,15 +60,17 @@ const App = () => {
               path="logout"
               element={<Logout handleLogout={handleLogout} />}
             />
-            <Route
-              path="/dashboard"
-              element={
-                <>
-                  <Dashboard />
-                  <Footer />
-                </>
-              }
-            />
+            {authorised && (
+              <Route
+                path="/dashboard"
+                element={
+                  <>
+                    <Dashboard />
+                    <Footer />
+                  </>
+                }
+              />
+            )}
             <Route
               path="/logs"
               element={
