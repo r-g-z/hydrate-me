@@ -33,7 +33,7 @@ const Header = () => {
         }}
       >
         🌑
-        <Switch onChange={toggleColorMode} />
+        <Switch onChange={toggleColorMode} isChecked={colorMode === "light"} />
         ☀️
       </Box>
     </Box>

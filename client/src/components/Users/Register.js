@@ -1,11 +1,19 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./Login.css";
-import { Heading, Text, Box, Button, Input } from "@chakra-ui/react";
-import { BsFillArrowLeftSquareFill } from "react-icons/bs";
+import {
+  Heading,
+  Text,
+  Box,
+  Button,
+  Input,
+  Alert,
+  AlertIcon,
+} from "@chakra-ui/react";
 
 const Register = (props) => {
   const [fields, setFields] = useState({ username: "", password: "" });
+  const [error, setError] = useState(null);
   const navigate = useNavigate();
 
   const handleChange = (event) => {
@@ -27,6 +35,8 @@ const Register = (props) => {
     if (res.ok) {
       props.handleRegister(data);
       navigate("/onboarding");
+    } else {
+      setError(data.msg);
     }
   };
 
@@ -60,6 +70,12 @@ const Register = (props) => {
       <Button className="marginlg" type="submit">
         Register
       </Button>
+      {error && (
+        <Alert status="error">
+          <AlertIcon />
+          {error}
+        </Alert>
+      )}
       <Text className="marginlg">Already have an account? </Text>
       <Text as="i">
         <Link to="/login" as="i">

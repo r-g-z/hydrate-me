@@ -1,11 +1,19 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./Login.css";
-import { Heading, Text, Box, Button, Input } from "@chakra-ui/react";
-import { BsFillArrowLeftSquareFill } from "react-icons/bs";
+import {
+  Heading,
+  Text,
+  Box,
+  Button,
+  Input,
+  Alert,
+  AlertIcon,
+} from "@chakra-ui/react";
 
 const Login = (props) => {
   const [fields, setFields] = useState({ username: "", password: "" });
+  const [error, setError] = useState(null);
   const navigate = useNavigate();
 
   const handleChange = (event) => {
@@ -23,11 +31,12 @@ const Login = (props) => {
       body: JSON.stringify(fields),
     });
     const data = await res.json();
-    console.log(data.msg);
-    console.log(data.user.id);
     if (res.ok) {
       props.handleLogin(data);
       navigate("/dashboard");
+    } else {
+      console.log("here");
+      setError(data.msg);
     }
   };
 
@@ -61,6 +70,12 @@ const Login = (props) => {
       <Button className="marginlg" type="submit">
         Login
       </Button>
+      {error && (
+        <Alert status="error">
+          <AlertIcon />
+          {error}
+        </Alert>
+      )}
       <Text className="marginlg">No account yet? Sign up for free </Text>
       <Text as="i">
         <Link to="/register">Register here</Link>

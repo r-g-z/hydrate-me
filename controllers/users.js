@@ -94,11 +94,6 @@ userRouter.get("/isauthorised", async (req, res) => {
 userRouter.put("/onboard", async (req, res) => {
   console.log(req.body);
 
-  // weight * 0.033
-  // light + 350
-  // medium + 500
-  // intense 700
-
   const user = await User.findOneAndUpdate(
     {
       _id: req.session.currentUser._id,
