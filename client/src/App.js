@@ -34,7 +34,10 @@ const App = () => {
 
   useEffect(() => {
     const checkIfLoggedIn = async () => {
-      const res = await fetch(`/users/isauthorised`);
+      const res = await fetch(
+        `${process.env.REACT_APP_API_URL}/users/isauthorised`,
+        { credentials: "include" }
+      );
       const data = await res.json();
       console.log(data.msg);
       setAuthorised(data.authorised);

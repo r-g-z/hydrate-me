@@ -45,12 +45,13 @@ const ProfileForm = ({ onSuccessSubmit, initialState, button }) => {
     event.preventDefault();
     console.log(fields);
     const daily_goal = calculateDailyGoal(fields.weight, fields.exercise);
-    fetch(`/users/onboard`, {
+    fetch(`${process.env.REACT_APP_API_URL}/users/onboard`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({ ...fields, daily_goal }),
+      credentials: "include",
     })
       .then((res) => {
         return res.json();

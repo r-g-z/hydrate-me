@@ -9,8 +9,9 @@ const Logs = () => {
   const [waterPercentage, setWaterPercentage] = useState(0);
 
   useEffect(() => {
-    fetch(`/users/profile`, {
+    fetch(`${process.env.REACT_APP_API_URL}/users/profile`, {
       method: "GET",
+      credentials: "include",
     })
       .then((res) => {
         return res.json();
@@ -22,11 +23,12 @@ const Logs = () => {
 
   useEffect(() => {
     fetch(
-      `/entries?startDate=${startOfDay(new Date())}&endDate=${endOfDay(
+      `${process.env.REACT_APP_API_URL}/entries?startDate=${startOfDay(
         new Date()
-      )}`,
+      )}&endDate=${endOfDay(new Date())}`,
       {
         method: "GET",
+        credentials: "include",
       }
     )
       .then((res) => {
@@ -50,12 +52,13 @@ const Logs = () => {
   }, [user, waterEntries]);
 
   const handleDelete = (id) => {
-    fetch(`/entries`, {
+    fetch(`${process.env.REACT_APP_API_URL}/entries`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({ id }),
+      credentials: "include",
     })
       .then((res) => {
         return res.json();

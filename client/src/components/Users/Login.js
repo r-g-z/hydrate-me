@@ -25,9 +25,10 @@ const Login = (props) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const res = await fetch(`/users/login`, {
+    const res = await fetch(`${process.env.REACT_APP_API_URL}/users/login`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
+      credentials: "include",
       body: JSON.stringify(fields),
     });
     const data = await res.json();

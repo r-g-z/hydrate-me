@@ -6,6 +6,7 @@ const Logout = () => {
   const handleClick = async () => {
     const res = await fetch("/users/logout", {
       method: "POST",
+      credentials: "include",
     });
     navigate("/");
   };

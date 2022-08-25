@@ -6,8 +6,9 @@ const OnboardSummary = (props) => {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    fetch(`/users/profile`, {
+    fetch(`${process.env.REACT_APP_API_URL}/users/profile`, {
       method: "GET",
+      credentials: "include",
     })
       .then((res) => {
         return res.json();

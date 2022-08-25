@@ -24,6 +24,8 @@ app.use(
     store: sessionStore,
     cookie: {
       maxAge: 7 * 24 * 60 * 60 * 1000,
+      secure: process.env.NODE_ENV !== "development",
+      httpOnly: false,
     },
   })
 );
@@ -31,19 +33,12 @@ app.use(
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-const whitelist = ["https://hydrate-me-ui.herokuapp.com"];
 const corsOptions = {
-  // origin: function (origin, callback) {
-  //   if (!origin || whitelist.indexOf(origin) !== -1) {
-  //     callback(null, true);
-  //   } else {
-  //     callback(new Error("Not allowed by CORS"));
-  //   }
-  // },
-  // credentials: true,
-  origin: "*",
+  origin: ["http://localhost:5051", "https://hydrate-me.herokuapp.com"],
   methods: ["GET", "POST", "DELETE", "UPDATE", "PUT", "PATCH"],
+  credentials: true,
 };
+
 app.use(cors(corsOptions));
 
 app.use("/users", usersRouter);
