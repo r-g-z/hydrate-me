@@ -3,6 +3,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const session = require("express-session");
 const mongoDBSession = require("connect-mongodb-session");
+const cors = require("cors");
 const usersRouter = require("./controllers/users");
 const entriesRouter = require("./controllers/entries");
 
@@ -29,15 +30,24 @@ app.use(
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+
+const whitelist = ["https://hydrate-me-ui.herokuapp.com"];
+const corsOptions = {
+  // origin: function (origin, callback) {
+  //   if (!origin || whitelist.indexOf(origin) !== -1) {
+  //     callback(null, true);
+  //   } else {
+  //     callback(new Error("Not allowed by CORS"));
+  //   }
+  // },
+  // credentials: true,
+  origin: "*",
+  methods: ["GET", "POST", "DELETE", "UPDATE", "PUT", "PATCH"],
+};
+app.use(cors(corsOptions));
+
 app.use("/users", usersRouter);
 app.use("/entries", entriesRouter);
-
-app.use(
-  cors({
-    origin: "hydrate-me-ui.herokuapp.com",
-    credentials: true,
-  })
-);
 
 mongoose.connect(dbURL, () => {
   console.log("Connected to hydrate db");
