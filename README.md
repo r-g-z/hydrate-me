@@ -5,11 +5,11 @@ For people who work in the office or home, or for people who gym daily and don't
 
 #### Heroku: [App](https://hydrate-me-ui.herokuapp.com/)
 
-Sample account:
+Demo account:
 
 ```
-Username: test
-Password: test
+Username: demo
+Password: demo
 ```
 
 Project 4 [Brief](brief.md)
