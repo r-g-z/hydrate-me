@@ -3,13 +3,13 @@
 This app is created for those who don't drink enough water. Everyone thinks 8 cups/2 Litres a day is enough but that's not true.
 For people who work in the office or home, or for people who gym daily and don't drink enough water. Did you know you are meant to drink more water if you sweat a lot? Designed to generate the correct amount of water you need to take daily.
 
-[View the app here](#)
+#### Heroku: [App](https://hydrate-me-ui.herokuapp.com/)
 
 Sample account:
 
 ```
-Username: demo
-Password: demo
+Username: test
+Password: test
 ```
 
 Project 4 [Brief](brief.md)
@@ -40,6 +40,7 @@ Third-party library components, including:
 2. Created wireframes using Figma
 3. Design the database according to the wireframes
 4. Set up the front end and back end
+5. Mobile App first
 
 ### Bugs
 
