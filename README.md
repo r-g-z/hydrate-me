@@ -16,8 +16,6 @@ Project 4 [Brief](brief.md)
 
 ## Tech used:
 
-<hr>
-
 - React
 - Javascript
 - HTML
@@ -33,8 +31,6 @@ Third-party library components, including:
 - [Fonts from Google Fonts](https://fonts.google.com/specimen/Gaegu?query=gaegu)
 
 ## Approach
-
-<hr>
 
 1. Looked at other water tracking apps to get inspiration
 2. Created wireframes using Figma
@@ -54,8 +50,6 @@ Third-party library components, including:
 
 ## Future Updates
 
-<hr>
-
 - Ability to have notification, to remind users to drink water every hour.
 - Ability to check to previous water logs from other days and get an average for the week.
 - To have achievements to show the user has reached their daily drinking goal for a certain amount of days.
@@ -63,7 +57,5 @@ Third-party library components, including:
 <img src="./client/public/img/Wireframe-goal.png" width="600px">
 
 ## Mobile App - Dark and Light Mode
-
-<hr>
 
 <img src="./client/public/img/Dark.jpg" width="300px"><img src="./client/public/img/Light.jpg" width="300px">
