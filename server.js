@@ -22,10 +22,13 @@ app.use(
     resave: false,
     saveUninitialized: false,
     store: sessionStore,
+    name: "HydrateMeSession",
+    proxy: true,
     cookie: {
       maxAge: 7 * 24 * 60 * 60 * 1000,
       secure: process.env.NODE_ENV !== "development",
       httpOnly: false,
+      // sameSite: "none",
     },
   })
 );
@@ -34,7 +37,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 const corsOptions = {
-  origin: ["http://localhost:5051", "https://hydrate-me.herokuapp.com"],
+  origin: ["http://localhost:5051", "https://hydrate-me-ui.herokuapp.com"],
   methods: ["GET", "POST", "DELETE", "UPDATE", "PUT", "PATCH"],
   credentials: true,
 };
