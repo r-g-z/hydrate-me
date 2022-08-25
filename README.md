@@ -38,11 +38,6 @@ Third-party library components, including:
 4. Set up the front end and back end
 5. Mobile App first
 
-### Bugs
-
-- Routes are not protected
-- Hard coded error messages for login / register
-
 ### Wireframes
 
 <img src="./client/public/img/wireframe_1.png" width="1000px">
