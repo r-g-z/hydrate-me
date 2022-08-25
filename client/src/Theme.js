@@ -7,7 +7,10 @@ const config = {
 
 const theme = extendTheme({
   config,
-  components: { Button: { variants: { solid: { bg: "blue.200" } } } },
+  components: {
+    Button: { variants: { solid: { bg: "blue.200" } } },
+    Link: { baseStyle: { color: "blue.300" } },
+  },
   fonts: { heading: `"Gaegu", cursive`, body: `"Gaegu", cursive` },
 });
 

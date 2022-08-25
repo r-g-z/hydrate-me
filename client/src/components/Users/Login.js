@@ -78,7 +78,7 @@ const Login = (props) => {
         </Alert>
       )}
       <Text className="marginlg">No account yet? Sign up for free </Text>
-      <Text as="i">
+      <Text as="i" color={"blue.200"}>
         <Link to="/register">Register here</Link>
       </Text>
     </form>
