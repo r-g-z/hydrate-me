@@ -1,4 +1,4 @@
-import { Image, Flex, Text, HStack, Box } from "@chakra-ui/react";
+import { Image, Text, HStack, Box } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { ImDroplet } from "react-icons/im";
 import { BsPersonFill } from "react-icons/bs";
@@ -58,7 +58,7 @@ const Profile = ({ authorised, handleLogout }) => {
         sx={{
           border: "1px",
           px: "1rem",
-          py: "0.5rem",
+          py: "1rem",
           mt: "10px",
           borderRadius: "0.5rem",
         }}

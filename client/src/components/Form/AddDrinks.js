@@ -10,9 +10,6 @@ import {
   DrawerContent,
   DrawerCloseButton,
 } from "@chakra-ui/react";
-
-import { AddIcon } from "@chakra-ui/icons";
-import { GiWaterGallon } from "react-icons/gi";
 import { BsCupFill } from "react-icons/bs";
 
 const AddDrinks = (props) => {

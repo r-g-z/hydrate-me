@@ -7,7 +7,6 @@ const Logout = () => {
     const res = await fetch("/users/logout", {
       method: "POST",
     });
-    // handleLogout();
     navigate("/");
   };
 

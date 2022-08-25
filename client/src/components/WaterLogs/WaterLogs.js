@@ -1,6 +1,6 @@
-import { List, ListItem, Button, Text, Box, VStack } from "@chakra-ui/react";
+import { Button, Text, Box, VStack } from "@chakra-ui/react";
 import { DeleteIcon } from "@chakra-ui/icons";
-import { endOfDay, format, parseISO, startOfDay } from "date-fns";
+import { format, parseISO } from "date-fns";
 
 const WaterLogs = ({ handleDelete, waterEntries }) => {
   return (

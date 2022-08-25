@@ -1,19 +1,6 @@
 import { useEffect, useState } from "react";
-import { endOfDay, format, parseISO, startOfDay } from "date-fns";
-import {
-  Heading,
-  Flex,
-  Text,
-  useDisclosure,
-  CircularProgress,
-  CircularProgressLabel,
-  List,
-  ListItem,
-  Icon,
-  Box,
-  Button,
-} from "@chakra-ui/react";
-import { DeleteIcon } from "@chakra-ui/icons";
+import { endOfDay, startOfDay } from "date-fns";
+import { Heading, Box } from "@chakra-ui/react";
 import WaterLogs from "./WaterLogs/WaterLogs";
 
 const Logs = () => {

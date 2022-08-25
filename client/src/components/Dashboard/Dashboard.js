@@ -3,16 +3,10 @@ import {
   Heading,
   Flex,
   Text,
-  useDisclosure,
   CircularProgress,
   CircularProgressLabel,
-  List,
-  ListItem,
-  Icon,
   Box,
-  Button,
 } from "@chakra-ui/react";
-import { DeleteIcon } from "@chakra-ui/icons";
 import { endOfDay, format, parseISO, startOfDay } from "date-fns";
 import AddDrinks from "../Form/AddDrinks";
 import { Link } from "react-router-dom";

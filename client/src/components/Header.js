@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Image, Box, Button, useColorMode, Switch } from "@chakra-ui/react";
+import { Image, Box, useColorMode, Switch } from "@chakra-ui/react";
 
 const Header = () => {
   const { colorMode, toggleColorMode } = useColorMode();

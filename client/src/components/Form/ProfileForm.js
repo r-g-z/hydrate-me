@@ -43,8 +43,6 @@ const ProfileForm = ({ onSuccessSubmit, initialState, button }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // props.onFormSubmit(fields);
-    // setFields(initialState);
     console.log(fields);
     const daily_goal = calculateDailyGoal(fields.weight, fields.exercise);
     fetch(`/users/onboard`, {
