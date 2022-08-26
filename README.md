@@ -36,7 +36,7 @@ Third-party library components, including:
 2. Created wireframes using Figma
 3. Design the database according to the wireframes
 4. Set up the front end and back end
-5. Mobile App first
+5. Mobile Only
 
 ### Wireframes
 

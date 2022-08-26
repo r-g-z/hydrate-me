@@ -53,7 +53,7 @@ const App = () => {
           <Header authorised={authorised} handleLogout={handleLogout} />
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/onboarding" element={<Onboard />} />
+            {authorised && <Route path="/onboarding" element={<Onboard />} />}
             <Route
               path="/register"
               element={<Register handleRegister={handleAuth} />}
@@ -74,30 +74,36 @@ const App = () => {
                 }
               />
             )}
-            <Route
-              path="/logs"
-              element={
-                <>
-                  <Logs /> <Footer />
-                </>
-              }
-            />
-            <Route
-              path="/profile"
-              element={
-                <>
-                  <Profile /> <Footer />
-                </>
-              }
-            />
-            <Route
-              path="/profile/edit"
-              element={
-                <>
-                  <EditProfile /> <Footer />
-                </>
-              }
-            />
+            {authorised && (
+              <Route
+                path="/logs"
+                element={
+                  <>
+                    <Logs /> <Footer />
+                  </>
+                }
+              />
+            )}
+            {authorised && (
+              <Route
+                path="/profile"
+                element={
+                  <>
+                    <Profile /> <Footer />
+                  </>
+                }
+              />
+            )}
+            {authorised && (
+              <Route
+                path="/profile/edit"
+                element={
+                  <>
+                    <EditProfile /> <Footer />
+                  </>
+                }
+              />
+            )}
           </Routes>
         </Container>
       </div>
