@@ -37,7 +37,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 const corsOptions = {
-  origin: ["http://localhost:5051", "https://hydrate-me-ui.herokuapp.com"],
+  origin: ["http://localhost:5051", "https://hydrate-me.netlify.app"],
   methods: ["GET", "POST", "DELETE", "UPDATE", "PUT", "PATCH"],
   credentials: true,
 };
