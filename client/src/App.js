@@ -15,7 +15,7 @@ import Logs from "./components/Logs";
 import Profile from "./components/Profile";
 import EditProfile from "./components/EditProfile";
 import Footer from "./components/Footer";
-import theme from "./theme.js";
+import theme from "./Theme";
 
 const App = () => {
   const [authorised, setAuthorised] = useState(null);
